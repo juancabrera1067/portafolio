@@ -1,7 +1,7 @@
 /* js/contact.js */
 
-// Endpoint del backend (PHP) — en hosting estático sin PHP usará el fallback automático
-const PHP_ENDPOINT = 'php/enviar-contacto.php';
+// Endpoint de envío — FormSubmit (gratis, sin backend). Si falla, usa el fallback por correo
+const FORM_ENDPOINT = 'https://formsubmit.co/ajax/juandedioscabrerasanchez@gmail.com';
 
 const NICHE_TO_TYPE = {
     'tienda': 'pos',
@@ -90,8 +90,11 @@ export function initContactForm() {
         submitBtn.style.opacity = '0.7';
 
         const formData = new FormData(form);
+        formData.append('_subject', 'Solicitud de proyecto desde el portafolio');
+        formData.append('_template', 'table');
+        formData.append('_captcha', 'false');
 
-        fetch(PHP_ENDPOINT, { method: 'POST', body: formData })
+        fetch(FORM_ENDPOINT, { method: 'POST', body: formData })
             .then(async (res) => {
                 let data;
                 try { data = await res.json(); } catch { data = {}; }

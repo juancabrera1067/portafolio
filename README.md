@@ -3,7 +3,7 @@
 Landing page + portafolio profesional para captar clientes como desarrollador de software freelance.
 HTML5 + CSS3 + JavaScript modular, sin frameworks ni dependencias externas (solo Google Fonts).
 
-## Estructura
+c## Estructura
 
 ```
 ├── index.html
@@ -27,18 +27,16 @@ python -m http.server 8080
 npx serve .
 ```
 
-## Pendientes antes de publicar
+## Pendientes
 
-- [ ] **Optimizar el logo**: `assets/images/logo-cabtec.png` pesa ~6 MB. Compresionarlo (tinypng.com o exportarlo como PNG-8/WebP) a menos de 200 KB.
-- [ ] **Reemplazar el dominio** `https://www.tu-dominio.com` en `index.html` (canonical, Open Graph, JSON-LD), `robots.txt` y `sitemap.xml`.
-- [ ] **Verificar tu perfil de LinkedIn**: se usa la URL `https://www.linkedin.com/in/juan-cabrera-sanchez`; ajustarla a tu URL real.
-- [ ] **Verificar el correo**: se usa `juandedioscabrerasanchez@gmail.com` (corregí el typo "gamil.com").
-- [ ] **Fotografía profesional**: reemplazar `assets/images/placeholder-perfil.svg` por `assets/images/juan-cabrera.jpg`.
-- [ ] **Capturas reales**: reemplazar los SVG de `assets/projects/` por capturas reales de los proyectos.
-- [ ] **Formulario de contacto**: la entrega actual simula el envío. Conectar a un servicio real:
-  - [FormSubmit](https://formsubmit.co) (gratis, sin backend): cambiar el `action` del formulario.
-  - o un endpoint propio (PHP / Node).
-- [ ] **Testimonios**: la sección está preparada con placeholders; agregar testimonios reales cuando existan.
+- [x] **Optimizar el logo**: `assets/images/logo-cabtec.png` redimensionado y comprimido a ~44 KB.
+- [x] **Reemplazar el dominio**: `index.html` (canonical, Open Graph, JSON-LD), `robots.txt` y `sitemap.xml` apuntan a `https://juancabrera1067.github.io/portafolio/`. Generada `assets/images/og-image.jpg` (1200x630).
+- [ ] **Verificar tu perfil de LinkedIn**: se usa `https://www.linkedin.com/in/juan-cabrera-sanchez`; ajustarla a tu URL real.
+- [x] **Verificar el correo**: `juandedioscabrerasanchez@gmail.com` correcto en todo el sitio.
+- [ ] **Fotografía profesional**: reemplazar `assets/images/placeholder-perfil.svg` por tu foto (`assets/images/juan-cabrera.jpg`).
+- [x] **Capturas reales**: `assets/projects/` usa `pos.jpg`, `web-gym.jpg`, `db-migracion.jpg` y `app-facturacion.jpg`.
+- [x] **Formulario de contacto**: conectado a [FormSubmit](https://formsubmit.co) (AJAX + fallback por correo). Nota: la primera vez que un visitante envíe un mensaje debes activar la cuenta con el correo de confirmación de FormSubmit.
+- [ ] **Testimonios**: la sección está oculta (`hidden`) hasta tener testimonios reales.
 
 ## Deploy
 
