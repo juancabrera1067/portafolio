@@ -1,0 +1,73 @@
+/* css/variables.css */
+:root {
+    /* Paleta de Colores (Lavanda & Violeta)
+       Base: Lavanda #D2C3F4 · Violeta profundo #36255C */
+    --bg-main: #FFFFFF;
+    --bg-light: #F8F6FC;          /* Lavanda muy sutil para alternar secciones */
+    --bg-dark: #36255C;           /* Violeta profundo (Footer/Hero/CTA) */
+    
+    --text-heading: #33255A;      /* Títulos en violeta oscuro */
+    --text-main: #4A4269;         /* Párrafos legibles, violeta grisáceo */
+    --text-light: #F4F0FB;        /* Textos sobre fondos oscuros */
+    
+    --primary-color: #6D4FC7;     /* Violeta medio (Botones, acentos) */
+    --primary-hover: #5640A8;     /* Violeta oscuro para hover */
+    --secondary-color: #E7DEFB;   /* Lavanda claro para fondos de badges */
+    --accent-color: #D2C3F4;      /* Lavanda (acentos sobre fondos oscuros) */
+    --accent-deep: #A892E8;       /* Lavanda media para degradados */
+
+    --border-color: #E6DFF7;
+
+    /* Tipografía */
+    --font-heading: 'Inter', system-ui, sans-serif;
+    --font-body: 'Inter', system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+    /* Espaciados (Escala) */
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 2rem;
+    --space-xl: 4rem;
+    --space-2xl: 6rem;
+
+    /* Estructura UI */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 16px;
+    
+    /* Sombras (Profundidad elegante) */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+
+    /* Transiciones */
+    --transition-fast: 0.2s ease-in-out;
+    --transition-normal: 0.3s ease-in-out;
+}
+
+/* ==========================================
+   TEMA OSCURO (la activa el botón js/utils.js)
+   ========================================== */
+[data-theme="dark"] {
+    color-scheme: dark;
+
+    --bg-main: #1B1533;         /* Fondo principal violeta oscuro */
+    --bg-light: #241C45;        /* Secciones alternas */
+    --bg-dark: #2A214F;         /* Hero/Footer/Stats (elevados sobre el fondo) */
+
+    --text-heading: #EDE9FB;    /* Títulos claros */
+    --text-main: #C7BEE2;       /* Párrafos legibles sobre oscuro */
+    --text-light: #F4F0FB;
+
+    --primary-color: #9B84E8;   /* Violeta claro para contraste sobre oscuro */
+    --primary-hover: #B9A8EC;
+    --secondary-color: #33285C; /* Fondos de badges/iconos */
+    --accent-color: #D2C3F4;    /* Lavanda se mantiene */
+    --accent-deep: #A892E8;
+
+    --border-color: #3B2F6B;
+
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.4);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.5), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
+}

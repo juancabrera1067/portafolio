@@ -1,0 +1,196 @@
+/* css/global.css */
+body {
+    font-family: var(--font-body);
+    color: var(--text-main);
+    background-color: var(--bg-main);
+    line-height: 1.6;
+}
+
+/* Jerarquía Tipográfica */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    color: var(--text-heading);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: var(--space-md);
+}
+
+p {
+    margin-bottom: var(--space-md);
+}
+
+/* Contenedor Principal (Max Width y Centrado) */
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Espaciado de Secciones (más compacto: menos aire blanco) */
+.section-padding {
+    padding: 3.5rem 0;
+}
+
+@media (min-width: 768px) {
+    .section-padding {
+        padding: 5rem 0;
+    }
+}
+
+/* Estado focus visible para accesibilidad por teclado */
+:focus-visible {
+    outline: 3px solid rgba(109, 79, 199, 0.55);
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+
+/* Clases Utilitarias */
+.bg-light {
+    background-color: var(--bg-light);
+}
+
+.bg-accent {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Textura de puntos sutil para secciones blancas (rompe el "mar de blanco") */
+.bg-texture {
+    background-image: radial-gradient(circle, var(--border-color) 1px, transparent 1.5px);
+    background-size: 28px 28px;
+}
+
+/* Botón blanco sobre el CTA azul (antes se fundía con el fondo) */
+.cta-section .btn-primary {
+    background-color: var(--bg-main);
+    border-color: var(--bg-main);
+    color: var(--primary-color);
+}
+
+.cta-section .btn-primary:hover,
+.cta-section .btn-primary:focus {
+    background-color: var(--bg-light);
+    border-color: var(--bg-light);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* CTA azul: el contenido debe quedar por encima de la textura */
+.cta-section > .container {
+    position: relative;
+    z-index: 1;
+}
+
+.cta-section::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.12) 1px, transparent 1.5px);
+    background-size: 32px 32px;
+    pointer-events: none;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-white {
+    color: var(--text-light);
+}
+
+.mt-2 {
+    margin-top: var(--space-sm);
+}
+
+.mt-4 {
+    margin-top: var(--space-md);
+}
+
+/* Cabeceras de Sección */
+.section-header {
+    margin-bottom: 3rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Etiqueta técnica sobre cada título (reduce el blanco y da carácter) */
+.section-eyebrow {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--primary-color);
+    margin-bottom: 0.75rem;
+}
+
+.section-title {
+    font-size: 2rem;
+    position: relative;
+    margin-bottom: 0.75rem;
+}
+
+/* Barra de acento bajo el título */
+.section-title::after {
+    content: '';
+    display: block;
+    width: 56px;
+    height: 4px;
+    border-radius: 2px;
+    margin-top: 0.75rem;
+    background: linear-gradient(90deg, var(--primary-color) 0%, var(--accent-deep) 100%);
+}
+
+/* Centrar la barra cuando el encabezado está centrado */
+.text-center .section-title::after {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (min-width: 768px) {
+    .section-title {
+        font-size: 2.5rem;
+    }
+}
+
+.section-subtitle {
+    font-size: 1.125rem;
+    color: var(--text-main);
+}
+
+/* Enlace para saltar al contenido principal (accesibilidad por teclado) */
+.skip-link {
+    position: absolute;
+    top: -100%; /* Fuera de pantalla hasta recibir foco */
+    left: 1rem;
+    z-index: 2000;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--primary-color);
+    color: var(--bg-main);
+    border-radius: var(--radius-md);
+    font-family: var(--font-heading);
+    font-weight: 600;
+    text-decoration: none;
+    transition: top var(--transition-normal);
+}
+
+.skip-link:focus {
+    top: 1rem;
+}
+
+/* Estado inicial para animaciones con Intersection Observer */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px); /* Ligeramente desplazado hacia abajo */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Estado final, esta clase la inyecta el animations.js */
+.fade-in.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}

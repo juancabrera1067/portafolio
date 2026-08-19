@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500">
+<rect width="400" height="500" fill="#E2E8F0"/>
+<circle cx="200" cy="190" r="86" fill="#CBD5E1"/>
+<path d="M0 500c20-120 90-170 200-170s180 50 200 170z" fill="#CBD5E1"/>
+<circle cx="200" cy="150" r="44" fill="#94A3B8" opacity="0.5"/>
+<text x="200" y="430" text-anchor="middle" font-family="monospace" font-size="16" fill="#64748B">Fotografía profesional</text>
+<text x="200" y="452" text-anchor="middle" font-family="monospace" font-size="16" fill="#64748B">próximamente</text>
+</svg>

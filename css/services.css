@@ -1,0 +1,91 @@
+/* css/services.css */
+
+.services-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+/* Responsive Grid */
+@media (min-width: 768px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.service-card {
+    background-color: var(--bg-main);
+    padding: 2.5rem 2rem;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-normal);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Efecto hover: se eleva y aparece una sombra y borde azul */
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary-color);
+}
+
+/* Contenedor del Icono */
+.service-icon {
+    width: 60px;
+    height: 60px;
+    background-color: var(--secondary-color); /* Fondo azul clarito */
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    transition: transform var(--transition-fast);
+}
+
+.service-icon svg {
+    width: 30px;
+    height: 30px;
+    color: var(--primary-color);
+}
+
+.service-card:hover .service-icon {
+    transform: scale(1.1); /* El icono crece sutilmente al pasar el mouse */
+}
+
+.service-title {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.service-desc {
+    color: var(--text-main);
+    margin-bottom: 1.5rem;
+    flex-grow: 1; /* Empuja el beneficio al fondo si los textos varían en altura */
+}
+
+/* Separador visual para el beneficio final */
+.service-benefit {
+    font-weight: 600;
+    color: var(--primary-color);
+    font-size: 0.9375rem;
+    border-top: 1px solid var(--border-color);
+    padding-top: 1.25rem;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+}
+
+.service-benefit::before {
+    content: '→';
+    margin-right: 8px;
+    font-size: 1.2rem;
+}

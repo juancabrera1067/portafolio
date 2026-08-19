@@ -1,0 +1,97 @@
+/* css/process.css */
+
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding-left: 2rem;
+}
+
+/* La línea vertical central/izquierda */
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background-color: var(--border-color);
+}
+
+.timeline-step {
+    position: relative;
+    padding-bottom: 3rem;
+}
+
+/* Quitamos el padding inferior al último elemento para no generar espacio extra */
+.timeline-step:last-child {
+    padding-bottom: 0;
+}
+
+/* El círculo con el número del paso */
+.step-number {
+    position: absolute;
+    left: -2rem; /* Lo centra sobre la línea vertical */
+    top: 0;
+    width: 36px;
+    height: 36px;
+    background-color: var(--bg-main);
+    border: 2px solid var(--primary-color);
+    border-radius: 50%;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-family: var(--font-heading);
+    font-size: 0.875rem;
+    transform: translateX(-50%);
+    transition: all var(--transition-normal);
+    z-index: 2;
+}
+
+.step-content {
+    background-color: var(--bg-main);
+    padding: 1.5rem 2rem;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-color);
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+/* Interacción hover: El paso se resalta y el número se rellena de azul */
+.timeline-step:hover .step-content {
+    transform: translateX(5px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary-color);
+}
+
+.timeline-step:hover .step-number {
+    background-color: var(--primary-color);
+    color: var(--bg-main);
+}
+
+.step-title {
+    font-size: 1.125rem;
+    margin-bottom: 0.5rem;
+}
+
+.step-desc {
+    margin-bottom: 0;
+    font-size: 0.9375rem;
+    color: var(--text-main);
+}
+
+/* Adaptación para pantallas más grandes (Desktop) */
+@media (min-width: 768px) {
+    .timeline {
+        padding-left: 3rem;
+    }
+    
+    .step-number {
+        left: -3rem;
+        width: 44px;
+        height: 44px;
+        font-size: 1rem;
+    }
+}

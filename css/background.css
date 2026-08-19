@@ -1,0 +1,132 @@
+/* css/background.css
+   Decoración de fondo: símbolos técnicos flotantes, blobs de luz suaves
+   y cursor parpadeante en los encabezados de sección.
+   (El modo reduced-motion se respeta globalmente en animations.css) */
+
+/* ==========================================
+   CONTENEDOR DECORATIVO (insertar en cada sección)
+   ========================================== */
+.has-decor {
+    position: relative;
+}
+
+.has-decor > .container {
+    position: relative;
+    z-index: 1; /* El contenido siempre queda por encima de la decoración */
+}
+
+.bg-decor {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none; /* Nunca bloquea clics ni texto */
+    z-index: 0;
+}
+
+/* ==========================================
+   SÍMBOLOS TÉCNICOS FLOTANTES ( </> {} # () = → ... )
+   ========================================== */
+.bg-symbols span {
+    position: absolute;
+    font-family: var(--font-mono);
+    font-weight: 700;
+    color: var(--accent-color);
+    opacity: 0.16;
+    line-height: 1;
+    user-select: none;
+    will-change: transform, opacity;
+}
+
+/* Posiciones y animaciones — variante A */
+.bg-symbols span:nth-child(1) { top: 10%;  left: 6%;   font-size: 24px; animation: float-a 8s ease-in-out infinite alternate; }
+.bg-symbols span:nth-child(2) { top: 24%;  right: 8%;  font-size: 15px; animation: float-b 10s ease-in-out infinite alternate; }
+.bg-symbols span:nth-child(3) { top: 58%;  left: 10%;  font-size: 18px; animation: float-a 12s ease-in-out infinite alternate-reverse; }
+.bg-symbols span:nth-child(4) { top: 70%;  right: 14%; font-size: 14px; animation: float-b 9s ease-in-out infinite alternate-reverse; }
+.bg-symbols span:nth-child(5) { bottom: 8%; right: 24%; font-size: 20px; animation: float-a 14s ease-in-out infinite alternate; }
+.bg-symbols span:nth-child(6) { top: 8%;   left: 38%;  font-size: 13px; animation: twinkle 5s ease-in-out infinite alternate; }
+
+/* Variante B: posiciones más repartidas (secciones alternas) */
+.bg-symbols.variant-b span:nth-child(1) { top: 16%; left: 12%; font-size: 22px; animation: float-b 9s ease-in-out infinite alternate; }
+.bg-symbols.variant-b span:nth-child(2) { top: 12%; right: 16%; font-size: 13px; animation: float-a 11s ease-in-out infinite alternate; }
+.bg-symbols.variant-b span:nth-child(3) { bottom: 22%; left: 8%; font-size: 17px; animation: twinkle 6s ease-in-out infinite alternate; }
+.bg-symbols.variant-b span:nth-child(4) { top: 64%; right: 6%; font-size: 15px; animation: float-a 13s ease-in-out infinite alternate-reverse; }
+.bg-symbols.variant-b span:nth-child(5) { bottom: 10%; left: 32%; font-size: 19px; animation: float-b 12s ease-in-out infinite alternate; }
+.bg-symbols.variant-b span:nth-child(6) { top: 44%; right: 28%; font-size: 12px; animation: twinkle 4.5s ease-in-out infinite alternate; }
+
+@keyframes float-a {
+    from { transform: translateY(-12px) rotate(-2deg); }
+    to   { transform: translateY(10px) rotate(3deg); }
+}
+
+@keyframes float-b {
+    from { transform: translate(-8px, 6px); }
+    to   { transform: translate(10px, -10px); }
+}
+
+@keyframes twinkle {
+    from { opacity: 0.05; }
+    to   { opacity: 0.35; }
+}
+
+/* En pantallas pequeñas se dejan solo 3 símbolos para no saturar */
+@media (max-width: 767px) {
+    .bg-symbols span:nth-child(even) { display: none; }
+}
+
+/* ==========================================
+   BLOBS DE LUZ (degradados lavanda/violeta difuminados)
+   ========================================== */
+.bg-blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(70px);
+    opacity: 0.4;
+    pointer-events: none;
+    will-change: transform;
+}
+
+.bg-blob.b1 {
+    width: 380px;
+    height: 380px;
+    top: -120px;
+    left: -100px;
+    background: radial-gradient(circle, rgba(210, 195, 244, 0.55) 0%, transparent 70%);
+    animation: blob-drift 20s ease-in-out infinite alternate;
+}
+
+.bg-blob.b2 {
+    width: 320px;
+    height: 320px;
+    bottom: -120px;
+    right: -80px;
+    background: radial-gradient(circle, rgba(109, 79, 199, 0.5) 0%, transparent 70%);
+    animation: blob-drift 26s ease-in-out infinite alternate-reverse;
+}
+
+.bg-blob.b3 {
+    width: 260px;
+    height: 260px;
+    top: 40%;
+    left: 45%;
+    background: radial-gradient(circle, rgba(168, 146, 232, 0.4) 0%, transparent 70%);
+    animation: blob-drift 32s ease-in-out 0.5s infinite alternate;
+}
+
+@keyframes blob-drift {
+    from { transform: translate(0, 0) scale(1); }
+    to   { transform: translate(30px, 25px) scale(1.1); }
+}
+
+/* ==========================================
+   CURSOR PARPADEANTE EN LOS TÍTULOS // servicios
+   ========================================== */
+.section-eyebrow::after {
+    content: '▍';
+    margin-left: 0.15rem;
+    animation: eyebrow-cursor 1.1s steps(1) infinite;
+}
+
+@keyframes eyebrow-cursor {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}

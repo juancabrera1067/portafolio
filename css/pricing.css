@@ -1,0 +1,299 @@
+/* css/pricing.css
+   Tabla de precios por tipo de proyecto (horas reales de desarrollo) */
+
+.pricing-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.875rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Encabezado de grupo (Desarrollo Web / Automatización / Sistemas) */
+.price-group {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--primary-color);
+    margin: 2rem 0 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.price-group:first-child {
+    margin-top: 0;
+}
+
+/* --- Fila de precio --- */
+.price-row {
+    display: grid;
+    grid-template-columns: 1fr auto auto auto;
+    align-items: center;
+    gap: 2rem;
+    background-color: var(--bg-main);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem 2rem;
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal), border-color var(--transition-normal);
+}
+
+.price-row:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary-color);
+}
+
+/* Fila destacada: fondo violeta degradado */
+.price-row.is-featured {
+    background: linear-gradient(160deg, #36255C 0%, #4B379B 55%, #6D4FC7 100%);
+    border-color: transparent;
+    box-shadow: 0 18px 35px -12px rgba(54, 37, 92, 0.5);
+}
+
+.price-row.is-featured:hover {
+    border-color: rgba(210, 195, 244, 0.5);
+}
+
+.price-badge {
+    position: relative;
+    margin-bottom: 1rem;
+    align-self: flex-start;
+    grid-column: 1 / -1;
+    grid-row: 1;
+    padding: 0.25rem 0.875rem;
+    border-radius: 9999px;
+    background-color: var(--accent-color);
+    color: #36255C;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    font-family: var(--font-heading);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+/* --- Contenido principal --- */
+.price-row-main h3 {
+    font-size: 1.1875rem;
+    margin-bottom: 0.375rem;
+}
+
+.is-featured .price-row-main h3 {
+    color: var(--text-light);
+}
+
+.price-row-desc {
+    font-size: 0.9375rem;
+    color: var(--text-main);
+    margin-bottom: 0;
+}
+
+.is-featured .price-row-desc {
+    color: #C7BEE2;
+}
+
+/* --- Duración e inversión --- */
+.price-row-time,
+.price-row-cost {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.25rem;
+    white-space: nowrap;
+}
+
+.price-row-time {
+    align-items: flex-end;
+}
+
+.price-row-time small,
+.price-row-cost small {
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-main);
+}
+
+.is-featured .price-row-time small,
+.is-featured .price-row-cost small {
+    color: var(--accent-color);
+}
+
+.price-row-time strong {
+    font-family: var(--font-mono);
+    font-size: 0.9375rem;
+    color: var(--text-heading);
+    font-weight: 600;
+}
+
+.is-featured .price-row-time strong {
+    color: var(--text-light);
+}
+
+.price-row-cost strong {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-deep));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    font-variant-numeric: tabular-nums;
+}
+
+.is-featured .price-row-cost strong {
+    background: linear-gradient(90deg, var(--accent-color), #FFFFFF);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+
+.cost-currency {
+    font-size: 0.8125rem;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.is-featured .cost-currency {
+    color: var(--text-light);
+}
+
+/* --- Botón de acción --- */
+.price-row-actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* --- Desglose de horas (details) --- */
+.row-breakdown {
+    grid-column: 1 / -1;
+    border-top: 1px dashed var(--border-color);
+    padding-top: 1rem;
+    margin-top: 0.5rem;
+}
+
+.is-featured .row-breakdown {
+    border-top-color: rgba(210, 195, 244, 0.25);
+}
+
+.row-breakdown summary {
+    cursor: pointer;
+    list-style: none;
+    font-family: var(--font-heading);
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: color var(--transition-fast);
+    user-select: none;
+}
+
+.is-featured .row-breakdown summary {
+    color: var(--accent-color);
+}
+
+.row-breakdown summary::-webkit-details-marker {
+    display: none;
+}
+
+/* Chevron que rota al abrir */
+.row-breakdown summary::after {
+    content: '▾';
+    font-size: 0.8125rem;
+    line-height: 1;
+    transition: transform var(--transition-normal);
+}
+
+.row-breakdown[open] summary::after {
+    transform: rotate(180deg);
+}
+
+.row-breakdown summary:hover {
+    color: var(--primary-hover);
+}
+
+.row-breakdown ul {
+    list-style: none;
+    padding: 0.875rem 0 0.25rem;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    animation: breakdown-down 0.3s ease;
+}
+
+.is-featured .row-breakdown ul {
+    color: #DCD3F4;
+}
+
+.row-breakdown li {
+    font-size: 0.875rem;
+    color: var(--text-main);
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+}
+
+.row-breakdown li::before {
+    content: '·';
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.is-featured .row-breakdown li::before {
+    color: var(--accent-color);
+}
+
+.row-breakdown li em {
+    font-style: normal;
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    color: var(--primary-hover);
+    margin-left: auto;
+    white-space: nowrap;
+}
+
+.is-featured .row-breakdown li em {
+    color: var(--accent-color);
+}
+
+@keyframes breakdown-down {
+    from { opacity: 0; transform: translateY(-6px); }
+    to   { opacity: 1; transform: none; }
+}
+
+/* --- Móvil: todo en una columna --- */
+@media (max-width: 860px) {
+    .price-row {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 1.5rem;
+    }
+
+    .price-row-time,
+    .price-row-cost {
+        flex-direction: row;
+        align-items: baseline;
+        gap: 0.5rem;
+    }
+
+    .price-row-time {
+        order: 0;
+    }
+
+    .price-row-cost strong {
+        font-size: 1.375rem;
+    }
+
+    .price-row-actions {
+        justify-content: flex-start;
+    }
+}

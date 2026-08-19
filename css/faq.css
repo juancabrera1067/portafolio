@@ -1,0 +1,86 @@
+/* css/faq.css
+   Preguntas frecuentes con acordeón nativo <details> (accesible sin JS) */
+
+.faq-list {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.875rem;
+}
+
+.faq-item {
+    background-color: var(--bg-main);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    transition: border-color var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.faq-item[open] {
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-md);
+}
+
+.faq-item summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.125rem 1.5rem;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 1.0625rem;
+    color: var(--text-heading);
+    cursor: pointer;
+    list-style: none; /* Quitar el triángulo por defecto */
+    user-select: none;
+}
+
+.faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-item summary:hover {
+    color: var(--primary-color);
+}
+
+/* Contenedor circular del signo + */
+.faq-icon {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1;
+    flex-shrink: 0;
+    transition: transform var(--transition-normal), background-color var(--transition-normal), color var(--transition-normal);
+}
+
+/* Al abrir: el + rota 135° (parece ×) y se rellena de violeta */
+.faq-item[open] .faq-icon {
+    transform: rotate(135deg);
+    background-color: var(--primary-color);
+    color: var(--bg-main);
+}
+
+.faq-body {
+    padding: 0 1.5rem 1.25rem;
+    color: var(--text-main);
+    font-size: 0.9375rem;
+    animation: faq-down 0.3s ease;
+}
+
+.faq-body p {
+    margin-bottom: 0;
+}
+
+@keyframes faq-down {
+    from { opacity: 0; transform: translateY(-6px); }
+    to   { opacity: 1; transform: none; }
+}

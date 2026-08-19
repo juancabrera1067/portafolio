@@ -1,0 +1,179 @@
+/* css/contact.css */
+
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+}
+
+@media (min-width: 992px) {
+    .contact-container {
+        grid-template-columns: 1fr 1.2fr;
+        align-items: start;
+    }
+}
+
+/* --- Tarjetas de Métodos de Contacto --- */
+.contact-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.contact-method-card {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background-color: var(--bg-light);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
+    transition: all var(--transition-fast);
+}
+
+.contact-method-card:hover {
+    transform: translateX(5px);
+    border-color: var(--primary-color);
+    background-color: #FFFFFF;
+    box-shadow: var(--shadow-sm);
+}
+
+.contact-method-card h4 {
+    margin-bottom: 0.25rem;
+    font-size: 1rem;
+}
+
+.contact-method-card span {
+    color: var(--text-main);
+    font-size: 0.9375rem;
+}
+
+/* Icono del método de contacto */
+.method-icon {
+    width: 46px;
+    height: 46px;
+    flex-shrink: 0;
+    background-color: var(--secondary-color);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color);
+    transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.method-icon svg {
+    width: 22px;
+    height: 22px;
+}
+
+.contact-method-card:hover .method-icon {
+    background-color: var(--primary-color);
+    color: var(--bg-main);
+}
+
+/* --- Formulario de Contacto --- */
+.contact-form-wrapper {
+    background-color: #FFFFFF;
+    padding: 2.5rem;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-lg);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--text-heading);
+    font-size: 0.9375rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    background-color: var(--bg-light);
+    color: var(--text-heading);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    transition: all var(--transition-fast);
+}
+
+/* Estado Focus (Cuando el usuario está escribiendo) */
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    background-color: #FFFFFF;
+    border-color: var(--primary-color);
+    /* Efecto de resplandor azul alrededor del input */
+    box-shadow: 0 0 0 3px rgba(109, 79, 199, 0.12); 
+    outline: none;
+}
+
+textarea {
+    resize: vertical; /* Permite al usuario hacer más alto el textarea, pero no más ancho */
+    min-height: 120px;
+}
+
+/* Texto de ayuda bajo los campos (ej. referencia de presupuesto) */
+.form-hint {
+    display: block;
+    margin-top: 0.375rem;
+    font-size: 0.8125rem;
+    color: var(--text-main);
+}
+
+/* Checkbox de consentimiento de privacidad */
+.form-group-check {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.form-group-check input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin-top: 3px;
+    flex-shrink: 0;
+    accent-color: var(--primary-color);
+    border-radius: var(--radius-sm);
+}
+
+.form-group-check label {
+    font-weight: 400;
+    font-size: 0.875rem;
+    color: var(--text-main);
+    line-height: 1.5;
+    margin-bottom: 0;
+}
+
+.form-group-check a {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* Estilos para los mensajes de validación (Se inyectarán con JS) */
+.form-status {
+    margin-bottom: 1.5rem;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+.form-status.success {
+    color: #16a34a; /* Verde éxito */
+}
+
+.form-status.error {
+    color: #dc2626; /* Rojo error */
+}

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aviso de Privacidad | Juan de Dios Cabrera · CabTec</title>
+    <meta name="description" content="Aviso de privacidad de CabTec: qué datos personales se recaban, para qué se usan y cómo ejercer tus derechos ARCO.">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#36255C">
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/dark-mode.css">
+
+    <!-- Aplicar el tema guardado antes del primer pintado -->
+    <script>
+        (function () {
+            var stored = localStorage.getItem('theme');
+            var dark = stored ? stored === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+            document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+        })();
+    </script>
+
+    <style>
+        .legal-header {
+            border-bottom: 1px solid var(--border-color);
+            background-color: var(--bg-main);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .legal-header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 70px;
+        }
+
+        .legal-brand {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 1.15rem;
+            color: var(--text-heading);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .legal-brand span {
+            color: var(--primary-color);
+        }
+
+        .legal-back {
+            font-family: var(--font-heading);
+            font-weight: 600;
+            font-size: 0.9375rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            transition: all var(--transition-fast);
+        }
+
+        .legal-back:hover {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            color: var(--bg-main);
+        }
+
+        .legal-main {
+            padding: 4rem 0 5rem;
+            max-width: 780px;
+            margin: 0 auto;
+        }
+
+        .legal-main h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .legal-date {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--primary-color);
+            margin-bottom: 2.5rem;
+        }
+
+        .legal-main h2 {
+            font-size: 1.25rem;
+            margin: 2.25rem 0 0.75rem;
+        }
+
+        .legal-main p,
+        .legal-main li {
+            color: var(--text-main);
+            font-size: 0.9375rem;
+            line-height: 1.7;
+        }
+
+        .legal-main ul {
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .legal-main li {
+            margin-bottom: 0.5rem;
+        }
+
+        .legal-main a {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .legal-footer {
+            border-top: 1px solid var(--border-color);
+            padding: 1.5rem 0;
+            text-align: center;
+            color: var(--text-main);
+            font-size: 0.875rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="legal-header">
+        <div class="container legal-header-inner">
+            <a href="index.html" class="legal-brand">Cab<span>Tec</span> · Aviso de Privacidad</a>
+            <a href="index.html" class="legal-back">&larr; Volver al sitio</a>
+        </div>
+    </header>
+
+    <main class="legal-main container">
+        <h1>Aviso de Privacidad</h1>
+        <p class="legal-date">CabTec · Juan de Dios Cabrera</p>
+
+        <p>
+            Con fundamento en la Ley Federal de Protección de Datos Personales en Posesión de los Particulares
+            (LFPDPPP) y su Reglamento, te informamos los términos y condiciones del tratamiento de datos personales
+            que recabamos a través de este sitio web.
+        </p>
+
+        <h2>1. Responsable</h2>
+        <p>
+            Juan de Dios Cabrera Sánchez (CabTec), con correo de contacto
+            <a href="mailto:juandedioscabrerasanchez@gmail.com">juandedioscabrerasanchez@gmail.com</a>,
+            es el responsable del uso y protección de tus datos personales.
+        </p>
+
+        <h2>2. Datos que recabamos</h2>
+        <p>Únicamente los datos que nos proporcionas voluntariamente al usar el formulario de contacto:</p>
+        <ul>
+            <li>Nombre y/o razón social.</li>
+            <li>Correo electrónico.</li>
+            <li>Tipo de proyecto y presupuesto estimado.</li>
+            <li>Descripción del proyecto que compartas en el mensaje.</li>
+        </ul>
+
+        <h2>3. Finalidad del tratamiento</h2>
+        <ul>
+            <li>Responder a tu solicitud, consulta o cotización.</li>
+            <li>Dar seguimiento a tu proyecto durante la etapa comercial.</li>
+            <li>Contactarte por el medio que elegiste (correo o WhatsApp).</li>
+        </ul>
+        <p>Estos datos no se utilizan para fines de mercadotecnia, publicidad ni se venden a terceros.</p>
+
+        <h2>4. Transferencias</h2>
+        <p>
+            Tus datos no se transfieren a terceros fuera de lo necesario para cumplir la finalidad de tu solicitud.
+            El envío del formulario se procesa mediante el correo electrónico que el propio usuario declara.
+        </p>
+
+        <h2>5. Derechos ARCO</h2>
+        <p>
+            Tienes derecho a Acceder, Rectificar, Cancelar u Oponerte al tratamiento de tus datos personales (derechos
+            ARCO). Para ejercerlos, envía un correo a
+            <a href="mailto:juandedioscabrerasanchez@gmail.com">juandedioscabrerasanchez@gmail.com</a>
+            indicando el derecho que deseas ejercer y acreditando tu identidad. La respuesta se dará en un plazo
+            máximo de 15 días hábiles.
+        </p>
+
+        <h2>6. Medidas de seguridad</h2>
+        <p>
+            Se implementan medidas administrativas, técnicas y físicas razonables para proteger tus datos personales
+            contra daño, pérdida, alteración, destrucción o uso no autorizado.
+        </p>
+
+        <h2>7. Cambios al aviso</h2>
+        <p>
+            Este aviso puede actualizarse por cambios legislativos o de operación. Cualquier modificación será
+            publicada en esta misma página.
+        </p>
+
+        <h2>8. Aceptación</h2>
+        <p>
+            Al marcar la casilla de consentimiento en el formulario y/o enviar tus datos, manifiestas que has leído y
+            aceptas los términos de este Aviso de Privacidad. Última actualización: 12 de agosto de 2026.
+        </p>
+    </main>
+
+    <footer class="legal-footer">
+        <div class="container">
+            <p>&copy; <span id="year">2026</span> Juan de Dios Cabrera · CabTec. Todos los derechos reservados. · <a href="index.html">Volver al sitio</a></p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
