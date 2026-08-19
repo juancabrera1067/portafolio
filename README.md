@@ -31,7 +31,7 @@ npx serve .
 
 - [x] **Optimizar el logo**: `assets/images/logo-cabtec.png` redimensionado y comprimido a ~44 KB.
 - [x] **Reemplazar el dominio**: `index.html` (canonical, Open Graph, JSON-LD), `robots.txt` y `sitemap.xml` apuntan a `https://juancabrera1067.github.io/portafolio/`. Generada `assets/images/og-image.jpg` (1200x630).
-- [ ] **Verificar tu perfil de LinkedIn**: se usa `https://www.linkedin.com/in/juan-cabrera-sanchez`; ajustarla a tu URL real.
+- [x] **Verificar tu perfil de LinkedIn**: apunta a `https://www.linkedin.com/in/juan-cabrera-sanchez-9a1a1b3a4/`.
 - [x] **Verificar el correo**: `juandedioscabrerasanchez@gmail.com` correcto en todo el sitio.
 - [ ] **Fotografía profesional**: reemplazar `assets/images/placeholder-perfil.svg` por tu foto (`assets/images/juan-cabrera.jpg`).
 - [x] **Capturas reales**: `assets/projects/` usa `pos.jpg`, `web-gym.jpg`, `db-migracion.jpg` y `app-facturacion.jpg`.
