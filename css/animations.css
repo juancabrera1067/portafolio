@@ -284,10 +284,10 @@ dialog.modal::backdrop {
 /* ==========================================
    ESTRELLA DE TECNOLOGÍAS (About): GIRAR EN HOVER
    ========================================== */
-.profile-image-placeholder img {
+.profile-image-frame img {
     transition: transform 1.2s ease;
 }
 
-.about-image-wrapper:hover .profile-image-placeholder img {
+.about-image-wrapper:hover .profile-image-frame img {
     transform: scale(1.04);
 }

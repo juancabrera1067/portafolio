@@ -3,14 +3,16 @@
 Landing page + portafolio profesional para captar clientes como desarrollador de software freelance.
 HTML5 + CSS3 + JavaScript modular, sin frameworks ni dependencias externas (solo Google Fonts).
 
-c## Estructura
+## Estructura
 
 ```
 ├── index.html
+├── 404.html          página de error personalizada (glitch + terminal animada)
+├── aviso-privacidad.html
 ├── css/          reset, variables, global, componentes y una hoja por sección
 ├── js/           main, navigation, animations, projects, contact, utils
 ├── assets/       images, icons y projects (capturas de proyectos)
-├── favicon/
+├── favicon/      favicon.svg + PNGs (16, 32, 180)
 ├── robots.txt
 └── sitemap.xml
 ```
@@ -30,13 +32,17 @@ npx serve .
 ## Pendientes
 
 - [x] **Optimizar el logo**: `assets/images/logo-cabtec.png` redimensionado y comprimido a ~44 KB.
-- [x] **Reemplazar el dominio**: `index.html` (canonical, Open Graph, JSON-LD), `robots.txt` y `sitemap.xml` apuntan a `https://juancabrera1067.github.io/portafolio/`. Generada `assets/images/og-image.jpg` (1200x630).
-- [x] **Verificar tu perfil de LinkedIn**: apunta a `https://www.linkedin.com/in/juan-cabrera-sanchez-9a1a1b3a4/`.
-- [x] **Verificar el correo**: `juandedioscabrerasanchez@gmail.com` correcto en todo el sitio.
-- [ ] **Fotografía profesional**: reemplazar `assets/images/placeholder-perfil.svg` por tu foto (`assets/images/juan-cabrera.jpg`).
+- [x] **Dominio**: `index.html` (canonical, Open Graph, JSON-LD), `robots.txt` y `sitemap.xml` apuntan a `https://juancabrera1067.github.io/portafolio/`. Generada `assets/images/og-image.jpg` (1200x630).
+- [x] **Perfil de LinkedIn**: `https://www.linkedin.com/in/juan-cabrera-sanchez-9a1a1b3a4/`.
+- [x] **Correo**: `juandedioscabrerasanchez@gmail.com` correcto en todo el sitio.
+- [x] **Fotografía profesional**: `assets/images/juan-cabrera.jpg` (tu foto real; antes estaba mal nombrada como `placeholder-perfil.svg`).
 - [x] **Capturas reales**: `assets/projects/` usa `pos.jpg`, `web-gym.jpg`, `db-migracion.jpg` y `app-facturacion.jpg`.
 - [x] **Formulario de contacto**: conectado a [FormSubmit](https://formsubmit.co) (AJAX + fallback por correo). Nota: la primera vez que un visitante envíe un mensaje debes activar la cuenta con el correo de confirmación de FormSubmit.
 - [ ] **Testimonios**: la sección está oculta (`hidden`) hasta tener testimonios reales.
+- [x] **JSON-LD LocalBusiness**: localizado en Culiacán, Sinaloa, MX.
+- [x] **404 personalizado**: `404.html` con glitch y terminal animada.
+- [x] **Favicons**: `apple-touch-icon.png` (180), `favicon-32x32.png` y `favicon-16x16.png`.
+- [x] **Aviso de privacidad**: enlazado en el footer y en el formulario; incluido en `sitemap.xml`.
 
 ## Deploy
 

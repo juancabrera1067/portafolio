@@ -1,0 +1,440 @@
+/* css/404.css
+   Página de error creativa: fondo degradado animado, glitch en el código,
+   ventana de terminal con escritura animada y símbolos flotantes.
+   El reduced-motion se respeta globalmente en animations.css. */
+
+/* Forzar la paleta oscura del sitio sin importar el tema activo:
+   da identidad dramática a la página de error. */
+body.error-body {
+    --bg-main: #1B1533;
+    --bg-dark: #2A214F;
+    --text-heading: #EDE9FB;
+    --text-main: #C7BEE2;
+    --text-light: #F4F0FB;
+    --primary-color: #9B84E8;
+    --primary-hover: #B9A8EC;
+    --accent-color: #D2C3F4;
+    --accent-deep: #A892E8;
+    --border-color: #3B2F6B;
+}
+
+/* ==========================================
+   FONDO: DEGRADADO ANIMADO + SCANLINES
+   ========================================== */
+.error-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(135deg, #17102E 0%, #2A214F 35%, #3B2F6B 65%, #17102E 100%);
+    background-size: 300% 300%;
+    animation: error-bg 18s ease infinite;
+    position: relative;
+    overflow: hidden;
+}
+
+@keyframes error-bg {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Capa de scanlines tipo monitor retro */
+.error-page::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 0.025) 0px,
+        rgba(255, 255, 255, 0.025) 1px,
+        transparent 1px,
+        transparent 3px
+    );
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* ==========================================
+   NAVBAR TRANSPARENTE SOBRE EL FONDO OSCURO
+   ========================================== */
+.error-body .header {
+    background: transparent;
+    border-bottom-color: transparent;
+    box-shadow: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+}
+
+.error-body .header.scrolled {
+    background: rgba(23, 16, 46, 0.75);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.error-body .logo-wordmark {
+    color: var(--text-heading);
+}
+
+.error-body .brand-mark {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.15);
+    box-shadow: none;
+}
+
+/* ==========================================
+   CONTENIDO PRINCIPAL
+   ========================================== */
+.error-main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 7rem 0 4rem;
+    position: relative;
+    z-index: 1;
+}
+
+.error-content {
+    max-width: 720px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+/* ==========================================
+   SÍMBOLOS TÉCNICOS FLOTANTES
+   ========================================== */
+.error-symbols {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.error-symbols span {
+    position: absolute;
+    font-family: var(--font-mono);
+    font-weight: 700;
+    color: var(--accent-color);
+    opacity: 0.18;
+    line-height: 1;
+    user-select: none;
+    will-change: transform, opacity;
+}
+
+.error-symbols span:nth-child(1) { top: 12%;  left: 7%;   font-size: 26px; animation: e-float-a 8s ease-in-out infinite alternate; }
+.error-symbols span:nth-child(2) { top: 20%;  right: 9%;  font-size: 16px; animation: e-float-b 10s ease-in-out infinite alternate; }
+.error-symbols span:nth-child(3) { top: 62%;  left: 12%;  font-size: 20px; animation: e-float-a 12s ease-in-out infinite alternate-reverse; }
+.error-symbols span:nth-child(4) { top: 72%;  right: 14%; font-size: 15px; animation: e-float-b 9s ease-in-out infinite alternate-reverse; }
+.error-symbols span:nth-child(5) { bottom: 6%; left: 30%;  font-size: 22px; animation: e-float-a 14s ease-in-out infinite alternate; }
+.error-symbols span:nth-child(6) { top: 10%;  left: 42%;  font-size: 14px; animation: e-twinkle 5s ease-in-out infinite alternate; }
+.error-symbols span:nth-child(7) { bottom: 18%; right: 24%; font-size: 18px; animation: e-twinkle 6.5s ease-in-out infinite alternate; }
+
+@keyframes e-float-a {
+    from { transform: translateY(-14px) rotate(-3deg); }
+    to   { transform: translateY(12px) rotate(4deg); }
+}
+
+@keyframes e-float-b {
+    from { transform: translate(-10px, 8px); }
+    to   { transform: translate(12px, -12px); }
+}
+
+@keyframes e-twinkle {
+    from { opacity: 0.05; }
+    to   { opacity: 0.4; }
+}
+
+@media (max-width: 767px) {
+    .error-symbols span:nth-child(even) { display: none; }
+}
+
+/* ==========================================
+   BLOBS DE LUZ
+   ========================================== */
+.error-blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(90px);
+    opacity: 0.35;
+    pointer-events: none;
+    will-change: transform;
+    z-index: 0;
+}
+
+.error-blob.b1 {
+    width: 420px;
+    height: 420px;
+    top: -140px;
+    left: -120px;
+    background: radial-gradient(circle, rgba(168, 146, 232, 0.6) 0%, transparent 70%);
+    animation: e-blob 22s ease-in-out infinite alternate;
+}
+
+.error-blob.b2 {
+    width: 360px;
+    height: 360px;
+    bottom: -140px;
+    right: -100px;
+    background: radial-gradient(circle, rgba(109, 79, 199, 0.55) 0%, transparent 70%);
+    animation: e-blob 28s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes e-blob {
+    from { transform: translate(0, 0) scale(1); }
+    to   { transform: translate(40px, 30px) scale(1.15); }
+}
+
+/* ==========================================
+   CÓDIGO 404 CON EFECTO GLITCH
+   ========================================== */
+.error-code {
+    position: relative;
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: clamp(6rem, 20vw, 10rem);
+    line-height: 1;
+    letter-spacing: -0.05em;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-deep) 50%, var(--accent-color) 100%);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    margin-bottom: 1rem;
+    animation: e-gradient 6s ease infinite;
+}
+
+@keyframes e-gradient {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Copias desplazadas con aberración cromática */
+.error-code::before,
+.error-code::after {
+    content: attr(data-text);
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.error-code::before {
+    text-shadow: -3px 0 rgba(255, 92, 138, 0.85);
+    animation: e-glitch-a 3s infinite linear alternate-reverse;
+}
+
+.error-code::after {
+    text-shadow: 3px 0 rgba(92, 214, 255, 0.85);
+    animation: e-glitch-b 2.4s infinite linear alternate-reverse;
+}
+
+@keyframes e-glitch-a {
+    0%   { clip-path: inset(12% 0 82% 0); transform: translate(-4px, -2px); }
+    15%  { clip-path: inset(58% 0 20% 0); transform: translate(4px, 2px); }
+    30%  { clip-path: inset(30% 0 55% 0); transform: translate(-3px, 1px); }
+    45%  { clip-path: inset(78% 0 6% 0);  transform: translate(3px, -2px); }
+    60%  { clip-path: inset(45% 0 42% 0); transform: translate(-2px, 2px); }
+    75%  { clip-path: inset(5% 0 88% 0);  transform: translate(2px, -1px); }
+    100% { clip-path: inset(66% 0 18% 0); transform: translate(-3px, 2px); }
+}
+
+@keyframes e-glitch-b {
+    0%   { clip-path: inset(70% 0 8% 0);  transform: translate(4px, 2px); }
+    20%  { clip-path: inset(20% 0 70% 0); transform: translate(-4px, -2px); }
+    40%  { clip-path: inset(50% 0 30% 0); transform: translate(3px, 1px); }
+    60%  { clip-path: inset(8% 0 80% 0);  transform: translate(-3px, -1px); }
+    80%  { clip-path: inset(35% 0 50% 0); transform: translate(4px, 2px); }
+    100% { clip-path: inset(85% 0 4% 0);  transform: translate(-2px, -1px); }
+}
+
+/* Parpadeo de entrada del código */
+.error-code {
+    animation: e-gradient 6s ease infinite, e-flicker-in 0.9s ease-out 0.2s both;
+}
+
+@keyframes e-flicker-in {
+    0%   { opacity: 0; transform: scale(0.7); }
+    30%  { opacity: 1; transform: scale(1.08); }
+    45%  { opacity: 0.4; }
+    60%  { opacity: 1; transform: scale(0.98); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+/* ==========================================
+   TÍTULO Y DESCRIPCIÓN
+   ========================================== */
+.error-title {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    color: var(--text-heading);
+    margin-bottom: 0.75rem;
+}
+
+.error-description {
+    font-size: 1.125rem;
+    color: var(--text-main);
+    margin-bottom: 2rem;
+}
+
+/* ==========================================
+   BOTONES
+   ========================================== */
+.error-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+}
+
+.error-actions .btn {
+    opacity: 0;
+    transform: translateY(16px);
+    animation: e-rise 0.6s ease-out forwards;
+}
+
+.error-actions .btn:nth-child(1) { animation-delay: 0.5s; }
+.error-actions .btn:nth-child(2) { animation-delay: 0.65s; }
+
+@keyframes e-rise {
+    to { opacity: 1; transform: none; }
+}
+
+/* El botón principal "late" suavemente para invitar al clic */
+.error-actions .btn-primary {
+    animation: e-rise 0.6s ease-out 0.5s forwards, e-pulse 2.6s ease-in-out 1.5s infinite;
+}
+
+@keyframes e-pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(155, 132, 232, 0.45); }
+    50%      { box-shadow: 0 0 0 14px rgba(155, 132, 232, 0); }
+}
+
+/* ==========================================
+   VENTANA DE TERMINAL (escritura animada por JS)
+   ========================================== */
+.error-terminal {
+    margin: 2.5rem auto 0;
+    max-width: 560px;
+    text-align: left;
+    background: rgba(11, 8, 26, 0.75);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg), 0 0 40px rgba(109, 79, 199, 0.15);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(20px) scale(0.96);
+    animation: e-rise 0.7s ease-out 0.35s forwards;
+}
+
+.terminal-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    background: rgba(255, 255, 255, 0.04);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.terminal-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.terminal-dot.dot-red    { background: #FF5F57; }
+.terminal-dot.dot-yellow { background: #FEBC2E; }
+.terminal-dot.dot-green  { background: #28C840; }
+
+.terminal-title {
+    margin-left: 0.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--text-main);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.terminal-body {
+    padding: 1.25rem 1.25rem 1.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    line-height: 1.9;
+    color: var(--text-main);
+    min-height: 140px;
+}
+
+.terminal-body p {
+    margin: 0;
+}
+
+.t-prompt {
+    color: var(--accent-color);
+    font-weight: 700;
+}
+
+.t-cmd {
+    color: var(--text-light);
+}
+
+.t-error {
+    color: #FF7B8A;
+}
+
+.t-out {
+    color: #8F7FD6;
+}
+
+/* Cursor parpadeante al final de la escritura */
+.t-cursor {
+    display: inline-block;
+    width: 9px;
+    height: 1.1em;
+    vertical-align: text-bottom;
+    background: var(--accent-color);
+    margin-left: 2px;
+    animation: e-cursor 1s steps(1) infinite;
+}
+
+@keyframes e-cursor {
+    0%, 100% { opacity: 1; }
+    50%      { opacity: 0; }
+}
+
+/* ==========================================
+   FOOTER
+   ========================================== */
+.error-body .footer {
+    background: transparent;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.error-body .footer p {
+    color: var(--text-main);
+}
+
+/* ==========================================
+   REDUCED MOTION (respaldo local por si animations.css no está cargado)
+   ========================================== */
+@media (prefers-reduced-motion: reduce) {
+    .error-page,
+    .error-code,
+    .error-code::before,
+    .error-code::after,
+    .error-symbols span,
+    .error-blob,
+    .error-actions .btn,
+    .error-actions .btn-primary,
+    .error-terminal,
+    .t-cursor {
+        animation: none !important;
+        transition: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}

@@ -54,7 +54,7 @@ export function initContactForm() {
         showStatus('Abriendo tu correo con el mensaje listo para enviar.', 'success', true);
     };
 
-    // Envío con fetch al backend PHP; si falla, usa el respaldo por correo
+    // Envío con fetch a FormSubmit (sin backend propio); si falla, usa el respaldo por correo
     const submitForm = (e) => {
         e.preventDefault(); // Evita que la página se recargue
 

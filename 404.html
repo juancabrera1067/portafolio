@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO -->
+    <title>Página no encontrada (404) | Juan de Dios Cabrera</title>
+    <meta name="description" content="La página que buscas no existe o fue movida. Vuelve al inicio del portafolio de Juan de Dios Cabrera, desarrollador de software freelance.">
+    <meta name="robots" content="noindex">
+    <link rel="canonical" href="https://juancabrera1067.github.io/portafolio/">
+    <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/404.css">
+
+    <!-- Fuentes: Inter (interfaz) + JetBrains Mono (acentos técnicos) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body class="error-body">
+
+    <!-- Enlace de accesibilidad para saltar al contenido (teclado) -->
+    <a href="#contenido-principal" class="skip-link">Saltar al contenido principal</a>
+
+    <!-- ==========================================
+         NAVBAR (transparente sobre el fondo oscuro)
+         ========================================== -->
+    <header class="header" id="header">
+        <div class="container navbar-container">
+            <a href="./" class="logo" aria-label="CabTec — Ir al inicio">
+                <span class="brand-mark">
+                    <img src="assets/images/logo-cabtec.png" alt="" width="96" height="30">
+                </span>
+                <span class="logo-wordmark" aria-hidden="true">Cab<span class="logo-accent">Tec</span></span>
+            </a>
+        </div>
+    </header>
+
+    <main id="contenido-principal" class="error-page">
+        <!-- Símbolos técnicos flotantes -->
+        <div class="error-symbols" aria-hidden="true">
+            <span>&lt;/&gt;</span><span>{ }</span><span>#</span><span>( )</span><span>=&gt;</span><span>404</span><span>...</span>
+        </div>
+
+        <!-- Blobs de luz -->
+        <div class="error-blob b1" aria-hidden="true"></div>
+        <div class="error-blob b2" aria-hidden="true"></div>
+
+        <div class="error-main">
+            <div class="container">
+                <div class="error-content">
+                    <span class="error-code" data-text="404" aria-hidden="true">404</span>
+                    <h1 class="error-title">Página no encontrada</h1>
+                    <p class="error-description">El enlace que seguiste está roto o la página fue movida. No rompas el build por esto — aquí tienes el camino de regreso.</p>
+
+                    <div class="error-actions">
+                        <a href="./" class="btn btn-primary">Volver al inicio</a>
+                        <a href="./#contacto" class="btn btn-secondary">Contactarme</a>
+                    </div>
+
+                    <div class="error-terminal" role="region" aria-label="Terminal simulada mostrando el error 404">
+                        <div class="terminal-bar">
+                            <span class="terminal-dot dot-red"></span>
+                            <span class="terminal-dot dot-yellow"></span>
+                            <span class="terminal-dot dot-green"></span>
+                            <span class="terminal-title">juancabrera1067@cabtec: ~</span>
+                        </div>
+                        <div class="terminal-body" id="terminal-body"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="footer-bottom">
+                <div class="container">
+                    <p>&copy; <span id="year">2026</span> Juan de Dios Cabrera · CabTec. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- Escritura animada de la terminal (respeta prefers-reduced-motion) -->
+    <script>
+        (function () {
+            var lines = [
+                { prompt: 'juancabrera1067@cabtec', cmd: 'git checkout pagina-solicitada' },
+                { error: 'fatal: ruta no encontrada \u2014 HTTP 404' },
+                { out: 'La p\u00e1gina se perdi\u00f3 entre ramas. Prueba estas opciones:' },
+                { prompt: 'juancabrera1067@cabtec', cmd: 'cd ~/inicio' }
+            ];
+            var host = document.getElementById('terminal-body');
+            var year = document.getElementById('year');
+            if (year) year.textContent = new Date().getFullYear();
+            if (!host) return;
+
+            var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            var charDelay = reduceMotion ? 0 : 22;
+            var lineDelay = reduceMotion ? 0 : 350;
+            var p, text, target, tick = 0;
+
+            function typeLine(li) {
+                p = document.createElement('p');
+                text = '';
+                if (li.prompt) {
+                    var s = document.createElement('span');
+                    s.className = 't-prompt';
+                    s.textContent = li.prompt + ' \u279c ';
+                    p.appendChild(s);
+                    target = document.createElement('span');
+                    target.className = li.error ? 't-error' : (li.out ? 't-out' : 't-cmd');
+                    p.appendChild(target);
+                    host.appendChild(p);
+                } else {
+                    target = document.createElement('span');
+                    target.className = li.error ? 't-error' : (li.out ? 't-out' : 't-cmd');
+                    target.textContent = li[li.error ? 'error' : (li.out ? 'out' : 'cmd')];
+                    host.appendChild(target);
+                    return Promise.resolve();
+                }
+                text = li.cmd;
+                return new Promise(function (resolve) {
+                    (function typeChar(i) {
+                        if (i <= text.length) {
+                            target.textContent = text.slice(0, i);
+                            setTimeout(function () { typeChar(i + 1); }, charDelay);
+                        } else {
+                            resolve();
+                        }
+                    })(0);
+                });
+            }
+
+            (function run(i) {
+                if (i >= lines.length) {
+                    var cursor = document.createElement('span');
+                    cursor.className = 't-cursor';
+                    host.appendChild(cursor);
+                    return;
+                }
+                typeLine(lines[i]).then(function () {
+                    setTimeout(function () { run(i + 1); }, lineDelay);
+                });
+            })(0);
+        })();
+    </script>
+</body>
+</html>
