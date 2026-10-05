@@ -8,7 +8,8 @@ export function initThemeToggle() {
 
     const root = document.documentElement;
     const systemDark = window.matchMedia('(prefers-color-scheme: dark)');
-    const stored = localStorage.getItem('theme');
+    const getStored = () => { try { return localStorage.getItem('theme'); } catch { return null; } };
+    const stored = getStored();
 
     const applyTheme = (dark) => {
         root.setAttribute('data-theme', dark ? 'dark' : 'light');
@@ -27,12 +28,12 @@ export function initThemeToggle() {
 
     // Si el usuario cambia el tema del sistema (sin elección propia guardada), seguirlo
     systemDark.addEventListener('change', (e) => {
-        if (!localStorage.getItem('theme')) applyTheme(e.matches);
+        if (!getStored()) applyTheme(e.matches);
     });
 
     toggle.addEventListener('click', () => {
         const nextDark = root.getAttribute('data-theme') !== 'dark';
-        localStorage.setItem('theme', nextDark ? 'dark' : 'light');
+        try { localStorage.setItem('theme', nextDark ? 'dark' : 'light'); } catch { /* Theme remains usable without storage. */ }
 
         // Transición suave de colores durante el cambio
         root.classList.add('theme-transition');
@@ -49,12 +50,15 @@ export function initBackToTop() {
 
     const onScroll = () => {
         btn.classList.toggle('visible', window.scrollY > 600);
+        const contact = document.querySelector('.float-whatsapp');
+        const hero = document.getElementById('inicio');
+        contact?.classList.toggle('visible', hero ? hero.getBoundingClientRect().bottom < 0 : window.scrollY > 600);
     };
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
 
     btn.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
     });
 }
 

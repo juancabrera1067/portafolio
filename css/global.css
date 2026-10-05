@@ -1,4 +1,6 @@
 /* css/global.css */
+[hidden] { display: none !important; }
+html { overflow-x: clip; }
 body {
     font-family: var(--font-body);
     color: var(--text-main);

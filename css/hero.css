@@ -107,7 +107,7 @@
 }
 
 .hero-description {
-    color: #B5A8DC; /* Lavanda grisácea clara especial para el fondo oscuro */
+    color: #DED5EE;
     font-size: 1.125rem;
     margin-bottom: 2.5rem;
     max-width: 600px;
@@ -346,4 +346,17 @@
 
 @media (max-width: 480px) {
     .comp-badge { display: none; } /* Badges invisibles en pantallas muy pequeñas */
+}
+
+.hero-project { width: 100%; margin: 0; overflow: hidden; border-radius: 16px; background: #F7F3FC; box-shadow: 0 22px 45px -18px rgba(0,0,0,.45); }
+.hero-project img { display: block; width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover; object-position: center 35%; background: #FFF; }
+.hero-project figcaption { display: flex; justify-content: space-between; flex-wrap: wrap; gap: .75rem; padding: 1.25rem; color: #36255C; font-size: .875rem; }
+.hero-project figcaption a { color: #51378C; font-weight: 600; text-decoration: underline; text-underline-offset: 4px; }
+.hero-title { text-wrap: balance; }
+@media (max-width: 767px) {
+    .hero { min-height: auto; padding-top: 110px; padding-bottom: 48px; }
+    .hero-title { font-size: clamp(2rem, 8.5vw, 2.5rem); }
+    .hero-description { font-size: 1rem; line-height: 1.65; margin-bottom: 1.5rem; }
+    .hero-cta-group .btn { width: 100%; text-align: center; }
+    .hero .web-showcase { min-height: 0; }
 }

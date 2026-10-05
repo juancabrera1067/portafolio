@@ -13,3 +13,5 @@ Thumbs.db
 # Builds (por si se agregan herramientas después)
 dist/
 build/
+# Capturas locales de revisión visual
+.impeccable/review/

@@ -4,10 +4,10 @@
 const FORM_ENDPOINT = 'https://formsubmit.co/ajax/juandedioscabrerasanchez@gmail.com';
 
 const NICHE_TO_TYPE = {
-    'tienda': 'pos',
-    'restaurante': 'pos',
+    'tienda': 'web',
+    'restaurante': 'web',
     'gimnasio': 'web',
-    'distribuidor': 'db'
+    'distribuidor': 'web'
 };
 
 export function initContactForm() {
@@ -117,6 +117,9 @@ export function initContactForm() {
     };
 
     form.addEventListener('submit', submitForm);
+    document.querySelectorAll('[data-project-type]').forEach(link => link.addEventListener('click', () => {
+        document.getElementById('project-type').value = link.dataset.projectType;
+    }));
 
     // ---- Botones "por nicho": prellenan el tipo de proyecto y llevan al formulario ----
     const nicheBtns = document.querySelectorAll('[data-niche]');
@@ -128,7 +131,7 @@ export function initContactForm() {
 
             projectSelect.value = NICHE_TO_TYPE[niche] || 'custom';
 
-            document.getElementById('contacto').scrollIntoView({ behavior: 'smooth' });
+            document.getElementById('contacto').scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
 
             window.setTimeout(() => {
                 const nameField = document.getElementById('name');

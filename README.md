@@ -1,68 +1,41 @@
-# CabTec — Portafolio Profesional de Juan de Dios Cabrera
+# CabTec — Portafolio de Juan de Dios Cabrera
 
-Landing page + portafolio profesional para captar clientes como desarrollador de software freelance.
-HTML5 + CSS3 + JavaScript modular, sin frameworks ni dependencias externas (solo Google Fonts).
+Sitio estático en HTML, CSS y JavaScript modular para presentar trabajo web y recibir solicitudes de cotización. Sin frameworks ni proceso de build; la portada utiliza Manrope y acentos en DM Serif Display desde Google Fonts.
 
-## Estructura
+## Vista previa local
 
-```
-├── index.html
-├── 404.html          página de error personalizada (glitch + terminal animada)
-├── aviso-privacidad.html
-├── css/          reset, variables, global, componentes y una hoja por sección
-├── js/           main, navigation, animations, projects, contact, utils
-├── assets/       images, icons y projects (capturas de proyectos)
-├── favicon/      favicon.svg + PNGs (16, 32, 180)
-├── robots.txt
-└── sitemap.xml
-```
+Desde la raíz del proyecto:
 
-## Cómo ejecutar
-
-Abre `index.html` directamente en el navegador, o mejor con un servidor local:
-
-```bash
-# Con Python
+```powershell
 python -m http.server 8080
-
-# Con Node (si tienes npx)
-npx serve .
 ```
 
-## Pendientes
+Abre http://localhost:8080. El servidor local permite cargar los módulos JavaScript correctamente.
 
-- [x] **Optimizar el logo**: `assets/images/logo-cabtec.png` redimensionado y comprimido a ~44 KB.
-- [x] **Dominio**: `index.html` (canonical, Open Graph, JSON-LD), `robots.txt` y `sitemap.xml` apuntan a `https://juancabrera1067.github.io/portafolio/`. Generada `assets/images/og-image.jpg` (1200x630).
-- [x] **Perfil de LinkedIn**: `https://www.linkedin.com/in/juan-cabrera-sanchez-9a1a1b3a4/`.
-- [x] **Correo**: `juandedioscabrerasanchez@gmail.com` correcto en todo el sitio.
-- [x] **Fotografía profesional**: `assets/images/juan-cabrera.jpg` (tu foto real; antes estaba mal nombrada como `placeholder-perfil.svg`).
-- [x] **Capturas reales**: `assets/projects/` usa `pos.jpg`, `web-gym.jpg`, `db-migracion.jpg` y `app-facturacion.jpg`.
-- [x] **Formulario de contacto**: conectado a [FormSubmit](https://formsubmit.co) (AJAX + fallback por correo). Nota: la primera vez que un visitante envíe un mensaje debes activar la cuenta con el correo de confirmación de FormSubmit.
-- [ ] **Testimonios**: la sección está oculta (`hidden`) hasta tener testimonios reales.
-- [x] **JSON-LD LocalBusiness**: localizado en Culiacán, Sinaloa, MX.
-- [x] **404 personalizado**: `404.html` con glitch y terminal animada.
-- [x] **Favicons**: `apple-touch-icon.png` (180), `favicon-32x32.png` y `favicon-16x16.png`.
-- [x] **Aviso de privacidad**: enlazado en el footer y en el formulario; incluido en `sitemap.xml`.
+## Portada rediseñada
 
-## Deploy
+`index.html` carga `css/variables.css` y `css/studio.css`. Dirección de estudio moderno: violeta profundo, lavanda, superficies sólidas, títulos alineados a izquierda, precios en filas y WhatsApp como acción principal. La experiencia adicional en software aparece en un `details` nativo; las preguntas también usan `details`, y los detalles de proyectos usan `dialog`.
 
-El sitio es 100% estático. Opciones recomendadas:
+`DESIGN.md` registra los tokens implementados; `.impeccable/design.json` incluye componentes de muestra, movimiento y breakpoints. `PRODUCT.md` y `.impeccable/direction.md` documentan el propósito y la dirección aprobada.
 
-**GitHub Pages:**
+La navegación móvil se activa hasta 767px. La revisión visual cubrió 1440, 768, 390 y 320px en ambos temas; las capturas y la matriz están en `.impeccable/review/`. El pie conserva fondo oscuro. El contenido, navegación, capturas y preguntas permanecen accesibles sin JavaScript; el formulario y los controles que requieren JavaScript se ocultan y se ofrecen WhatsApp y correo. Movimiento reducido elimina las entradas animadas.
 
-1. Sube el repositorio a GitHub (`git remote add origin https://github.com/tu-usuario/tu-repo.git`)
-2. En el repo: Settings → Pages → Source: "Deploy from a branch" → rama `main`, carpeta `/ (root)`.
-3. Listo: disponible en `https://tu-usuario.github.io/tu-repo/`
+`404.html` y `aviso-privacidad.html` conservan las hojas de estilo heredadas; el nuevo sistema de portada no se aplica a esas páginas.
 
-**Netlify (con dominio propio):**
+## Proyectos y procedencia
 
-1. Arrastra la carpeta a https://app.netlify.com/drop → listo.
-2. O conecta el repositorio de GitHub y activa deploy automático.
+- **Flor de Café:** cafetería de Guasave, en desarrollo y sin publicar. `assets/projects/flor-de-cafe.jpg` es una captura real de la portada obtenida del proyecto del usuario, sin modificar ese proyecto. Sus formularios no envían datos; la portada identifica los formularios y la publicación como pendientes. No se atribuyen resultados ni se presenta como una entrega terminada.
+- **Gimnasio:** sistema interno de recepción y administración, no una web pública. Se conservan sus capturas junto a POS, base de datos y facturación como experiencia adicional.
+- Se conservan el logo y la fotografía real de Juan. No se añaden testimonios ni cifras sin evidencia.
 
-## Tecnologías
+## Contacto, precios y formulario
 
-| Frontend | Backend futuro |
-|---|---|
-| HTML5, CSS3, JavaScript (ES Modules) | PHP / Node.js, API REST |
-| Google Fonts: Inter + JetBrains Mono | FormSubmit / endpoint propio |
-| 0 dependencias de build | CMS / panel administrativo |
+Contactos conservados: WhatsApp `+52 687 139 3762`, `juandedioscabrerasanchez@gmail.com`, GitHub `juancabrera1067` y LinkedIn `juan-cabrera-sanchez-9a1a1b3a4`.
+
+Precios de referencia conservados en MXN: página de presentación $3,000–$5,000; sitio web de negocio $6,000–$10,000; tienda en línea $11,000–$18,000. El alcance final se acuerda en una cotización.
+
+El formulario de CabTec utiliza el endpoint AJAX existente de FormSubmit y respaldo mediante `mailto:`. **La recepción real de mensajes y la activación de FormSubmit no se verificaron** durante el rediseño. El respaldo abre el cliente de correo con el texto preparado; el visitante debe enviarlo. No se enviaron consultas de prueba a terceros.
+
+## Publicación
+
+Este trabajo prepara una vista previa local. No se publicó el rediseño ni el proyecto Flor de Café. Los metadatos y archivos de hosting existentes se conservan.

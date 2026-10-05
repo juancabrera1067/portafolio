@@ -4,7 +4,7 @@
 const projectsData = {
     "pos": {
         title: "Sistema de Punto de Venta Integral",
-        problem: "El negocio perdía dinero por descontrol en inventarios y requería horas para hacer el corte de caja diario. Además, no sabían cuáles eran sus productos más rentables.",
+        problem: "El proyecto reúne ventas, inventario y caja en una herramienta para la operación del negocio.",
         solution: "Se desarrolló un sistema POS de escritorio centralizado. Permite escaneo de códigos de barra, gestión de roles (cajero/administrador) y sincronización de inventario en tiempo real.",
         features: [
             "Módulo de ventas ágil con soporte para lectores de códigos de barras.",
@@ -13,24 +13,19 @@ const projectsData = {
             "Reportes gráficos de ventas semanales y mensuales."
         ],
         tech: ["C#", "SQL Server", ".NET", "Windows Forms"],
-        result: "El tiempo de corte de caja se redujo de 2 horas a 5 minutos, y las mermas de inventario disminuyeron un 40% en el primer mes."
+        result: ""
     },
     "web-gym": {
-        title: "Sitio Web Corporativo para Gimnasio",
-        problem: "El gimnasio dependía exclusivamente de recomendaciones locales y no tenía presencia digital. Los clientes no encontraban horarios, planes ni precios sin llamar.",
-        solution: "Desarrollo de un sitio web responsivo con información de planes, horarios, galería de instalaciones y formulario de inscripción con confirmación automática por correo.",
-        features: [
-            "Diseño responsivo optimizado para dispositivos móviles.",
-            "Sección de planes y precios actualizable desde un panel de administración.",
-            "Formulario de inscripción con envío automático de confirmación.",
-            "Optimización SEO local para aparecer en búsquedas cercanas."
-        ],
-        tech: ["HTML5", "CSS3", "JavaScript", "PHP"],
-        result: "El gimnasio aumentó sus inscripciones en un 35% durante los primeros 3 meses gracias a las consultas digitales."
+        title: "Sistema de recepción y administración para gimnasio",
+        problem: "El gimnasio necesita una herramienta interna para el trabajo del recepcionista y la administración.",
+        solution: "Panel de gestión utilizado en la recepción del gimnasio. Es un sistema interno, no una página web pública.",
+        features: ["Interfaz de recepción y administración.", "Vista de clientes, membresías y accesos mostrada en la captura del proyecto."],
+        tech: ["Sistema administrativo"],
+        result: ""
     },
     "db-migracion": {
         title: "Migración y Optimización de Base de Datos",
-        problem: "Una empresa con años de facturación histórica tenía su información repartida en hojas de cálculo y bases antiguas, con reportes que tardaban más de 30 minutos.",
+        problem: "Proyecto de consolidación y organización de información histórica en una base de datos relacional.",
         solution: "Migración consolidada de todos los datos a SQL Server con esquema normalizado, índices optimizados y vistas para reportes gerenciales en tiempo real.",
         features: [
             "Migración íntegra de datos históricos sin pérdida de información.",
@@ -39,11 +34,11 @@ const projectsData = {
             "Backups automáticos y plan de recuperación ante desastres."
         ],
         tech: ["SQL Server", "SSMS", "Power BI"],
-        result: "Los reportes que antes tomaban 30 minutos ahora se generan en menos de 5 segundos, con total confianza en la información."
+        result: ""
     },
     "app-facturacion": {
         title: "Aplicación de Escritorio para Facturación",
-        problem: "El área de ventas emitía facturas manualmente, lo que generaba errores de cálculo, documentos duplicados y retrasos de hasta 2 días en la entrega al cliente.",
+        problem: "Proyecto para gestionar clientes, productos y documentos de facturación desde una aplicación de escritorio.",
         solution: "Aplicación de escritorio de facturación electrónica con catálogo de productos, validación automática de montos y generación de documentos en PDF listos para enviar.",
         features: [
             "Catálogo de clientes y productos con búsqueda instantánea.",
@@ -52,7 +47,7 @@ const projectsData = {
             "Historial consultable y filtrable por rango de fechas."
         ],
         tech: ["C#", ".NET", "SQL Server", "Windows Forms"],
-        result: "La emisión de facturas pasó de 2 días a minutos, eliminando los errores de cálculo manual y la duplicidad de documentos."
+        result: ""
     }
 };
 
@@ -64,7 +59,10 @@ export function initProjects() {
     filterBtns.forEach(btn => {
         btn.addEventListener('click', () => {
             // Remover clase activa de todos los botones y agregarla al clickeado
-            filterBtns.forEach(b => b.classList.toggle('active', b === btn));
+            filterBtns.forEach(b => {
+                b.classList.toggle('active', b === btn);
+                b.setAttribute('aria-pressed', String(b === btn));
+            });
 
             const filterValue = btn.getAttribute('data-filter');
 
@@ -80,6 +78,11 @@ export function initProjects() {
     const modal = document.getElementById('project-modal');
     const openBtns = document.querySelectorAll('.open-modal-btn');
     const closeBtn = document.querySelector('.close-modal-btn');
+    let modalTrigger;
+    modal?.addEventListener('close', () => {
+        document.body.style.overflow = '';
+        modalTrigger?.focus();
+    });
 
     // Elementos internos del modal a actualizar
     const modalTitle = document.getElementById('modal-title');
@@ -123,6 +126,7 @@ export function initProjects() {
             const projectId = btn.getAttribute('data-id');
             if (!projectId || !projectsData[projectId]) return;
 
+            modalTrigger = btn;
             populateModal(projectId);
             modal.showModal(); // API Nativa de HTML5 para abrir dialogs
             document.body.style.overflow = 'hidden'; // Evita scroll de fondo

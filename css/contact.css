@@ -39,7 +39,7 @@
     box-shadow: var(--shadow-sm);
 }
 
-.contact-method-card h4 {
+.contact-method-card h3 {
     margin-bottom: 0.25rem;
     font-size: 1rem;
 }
@@ -177,3 +177,6 @@ textarea {
 .form-status.error {
     color: #dc2626; /* Rojo error */
 }
+.contact-info, .contact-form-wrapper { min-width: 0; }
+.contact-method-card > div { min-width: 0; }
+.contact-method-card span { overflow-wrap: anywhere; }

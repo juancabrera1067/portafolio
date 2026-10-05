@@ -1,0 +1,459 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-05T20:29:51.141522+00:00",
+  "title": "Design System: CabTec",
+  "extensions": {
+    "colorMeta": {
+      "primary": {
+        "role": "primary",
+        "displayName": "Primary",
+        "tonalRamp": [
+          "oklch(15% 0.1783 290.40)",
+          "oklch(26% 0.1783 290.40)",
+          "oklch(38% 0.1783 290.40)",
+          "oklch(49% 0.1783 290.40)",
+          "oklch(61% 0.1783 290.40)",
+          "oklch(72% 0.1783 290.40)",
+          "oklch(84% 0.1783 290.40)",
+          "oklch(95% 0.1783 290.40)"
+        ]
+      },
+      "primary-hover": {
+        "role": "primary",
+        "displayName": "Primary hover",
+        "tonalRamp": [
+          "oklch(15% 0.1594 288.08)",
+          "oklch(26% 0.1594 288.08)",
+          "oklch(38% 0.1594 288.08)",
+          "oklch(49% 0.1594 288.08)",
+          "oklch(61% 0.1594 288.08)",
+          "oklch(72% 0.1594 288.08)",
+          "oklch(84% 0.1594 288.08)",
+          "oklch(95% 0.1594 288.08)"
+        ]
+      },
+      "violet-deep": {
+        "role": "primary",
+        "displayName": "Violet deep",
+        "tonalRamp": [
+          "oklch(15% 0.0946 294.63)",
+          "oklch(26% 0.0946 294.63)",
+          "oklch(38% 0.0946 294.63)",
+          "oklch(49% 0.0946 294.63)",
+          "oklch(61% 0.0946 294.63)",
+          "oklch(72% 0.0946 294.63)",
+          "oklch(84% 0.0946 294.63)",
+          "oklch(95% 0.0946 294.63)"
+        ]
+      },
+      "lavender": {
+        "role": "secondary",
+        "displayName": "Lavender",
+        "tonalRamp": [
+          "oklch(15% 0.0692 298.92)",
+          "oklch(26% 0.0692 298.92)",
+          "oklch(38% 0.0692 298.92)",
+          "oklch(49% 0.0692 298.92)",
+          "oklch(61% 0.0692 298.92)",
+          "oklch(72% 0.0692 298.92)",
+          "oklch(84% 0.0692 298.92)",
+          "oklch(95% 0.0692 298.92)"
+        ]
+      },
+      "bg-main": {
+        "role": "neutral",
+        "displayName": "Bg main",
+        "tonalRamp": [
+          "oklch(15% 0.0000 89.88)",
+          "oklch(26% 0.0000 89.88)",
+          "oklch(38% 0.0000 89.88)",
+          "oklch(49% 0.0000 89.88)",
+          "oklch(61% 0.0000 89.88)",
+          "oklch(72% 0.0000 89.88)",
+          "oklch(84% 0.0000 89.88)",
+          "oklch(95% 0.0000 89.88)"
+        ]
+      },
+      "bg-light": {
+        "role": "neutral",
+        "displayName": "Bg light",
+        "tonalRamp": [
+          "oklch(15% 0.0082 301.36)",
+          "oklch(26% 0.0082 301.36)",
+          "oklch(38% 0.0082 301.36)",
+          "oklch(49% 0.0082 301.36)",
+          "oklch(61% 0.0082 301.36)",
+          "oklch(72% 0.0082 301.36)",
+          "oklch(84% 0.0082 301.36)",
+          "oklch(95% 0.0082 301.36)"
+        ]
+      },
+      "text-heading": {
+        "role": "neutral",
+        "displayName": "Text heading",
+        "tonalRamp": [
+          "oklch(15% 0.0914 292.44)",
+          "oklch(26% 0.0914 292.44)",
+          "oklch(38% 0.0914 292.44)",
+          "oklch(49% 0.0914 292.44)",
+          "oklch(61% 0.0914 292.44)",
+          "oklch(72% 0.0914 292.44)",
+          "oklch(84% 0.0914 292.44)",
+          "oklch(95% 0.0914 292.44)"
+        ]
+      },
+      "text-main": {
+        "role": "neutral",
+        "displayName": "Text main",
+        "tonalRamp": [
+          "oklch(15% 0.0650 292.67)",
+          "oklch(26% 0.0650 292.67)",
+          "oklch(38% 0.0650 292.67)",
+          "oklch(49% 0.0650 292.67)",
+          "oklch(61% 0.0650 292.67)",
+          "oklch(72% 0.0650 292.67)",
+          "oklch(84% 0.0650 292.67)",
+          "oklch(95% 0.0650 292.67)"
+        ]
+      },
+      "text-light": {
+        "role": "neutral",
+        "displayName": "Text light",
+        "tonalRamp": [
+          "oklch(15% 0.0152 302.56)",
+          "oklch(26% 0.0152 302.56)",
+          "oklch(38% 0.0152 302.56)",
+          "oklch(49% 0.0152 302.56)",
+          "oklch(61% 0.0152 302.56)",
+          "oklch(72% 0.0152 302.56)",
+          "oklch(84% 0.0152 302.56)",
+          "oklch(95% 0.0152 302.56)"
+        ]
+      },
+      "secondary": {
+        "role": "secondary",
+        "displayName": "Secondary",
+        "tonalRamp": [
+          "oklch(15% 0.0402 299.76)",
+          "oklch(26% 0.0402 299.76)",
+          "oklch(38% 0.0402 299.76)",
+          "oklch(49% 0.0402 299.76)",
+          "oklch(61% 0.0402 299.76)",
+          "oklch(72% 0.0402 299.76)",
+          "oklch(84% 0.0402 299.76)",
+          "oklch(95% 0.0402 299.76)"
+        ]
+      },
+      "border": {
+        "role": "neutral",
+        "displayName": "Border",
+        "tonalRamp": [
+          "oklch(15% 0.0331 299.06)",
+          "oklch(26% 0.0331 299.06)",
+          "oklch(38% 0.0331 299.06)",
+          "oklch(49% 0.0331 299.06)",
+          "oklch(61% 0.0331 299.06)",
+          "oklch(72% 0.0331 299.06)",
+          "oklch(84% 0.0331 299.06)",
+          "oklch(95% 0.0331 299.06)"
+        ]
+      },
+      "dark-bg-main": {
+        "role": "neutral",
+        "displayName": "Dark bg main",
+        "tonalRamp": [
+          "oklch(15% 0.0569 290.15)",
+          "oklch(26% 0.0569 290.15)",
+          "oklch(38% 0.0569 290.15)",
+          "oklch(49% 0.0569 290.15)",
+          "oklch(61% 0.0569 290.15)",
+          "oklch(72% 0.0569 290.15)",
+          "oklch(84% 0.0569 290.15)",
+          "oklch(95% 0.0569 290.15)"
+        ]
+      },
+      "dark-bg-light": {
+        "role": "neutral",
+        "displayName": "Dark bg light",
+        "tonalRamp": [
+          "oklch(15% 0.0740 289.19)",
+          "oklch(26% 0.0740 289.19)",
+          "oklch(38% 0.0740 289.19)",
+          "oklch(49% 0.0740 289.19)",
+          "oklch(61% 0.0740 289.19)",
+          "oklch(72% 0.0740 289.19)",
+          "oklch(84% 0.0740 289.19)",
+          "oklch(95% 0.0740 289.19)"
+        ]
+      },
+      "dark-bg-dark": {
+        "role": "neutral",
+        "displayName": "Dark bg dark",
+        "tonalRamp": [
+          "oklch(15% 0.0812 289.21)",
+          "oklch(26% 0.0812 289.21)",
+          "oklch(38% 0.0812 289.21)",
+          "oklch(49% 0.0812 289.21)",
+          "oklch(61% 0.0812 289.21)",
+          "oklch(72% 0.0812 289.21)",
+          "oklch(84% 0.0812 289.21)",
+          "oklch(95% 0.0812 289.21)"
+        ]
+      },
+      "dark-text-heading": {
+        "role": "neutral",
+        "displayName": "Dark text heading",
+        "tonalRamp": [
+          "oklch(15% 0.0244 296.11)",
+          "oklch(26% 0.0244 296.11)",
+          "oklch(38% 0.0244 296.11)",
+          "oklch(49% 0.0244 296.11)",
+          "oklch(61% 0.0244 296.11)",
+          "oklch(72% 0.0244 296.11)",
+          "oklch(84% 0.0244 296.11)",
+          "oklch(95% 0.0244 296.11)"
+        ]
+      },
+      "dark-text-main": {
+        "role": "neutral",
+        "displayName": "Dark text main",
+        "tonalRamp": [
+          "oklch(15% 0.0508 296.71)",
+          "oklch(26% 0.0508 296.71)",
+          "oklch(38% 0.0508 296.71)",
+          "oklch(49% 0.0508 296.71)",
+          "oklch(61% 0.0508 296.71)",
+          "oklch(72% 0.0508 296.71)",
+          "oklch(84% 0.0508 296.71)",
+          "oklch(95% 0.0508 296.71)"
+        ]
+      },
+      "dark-primary": {
+        "role": "neutral",
+        "displayName": "Dark primary",
+        "tonalRamp": [
+          "oklch(15% 0.1452 292.67)",
+          "oklch(26% 0.1452 292.67)",
+          "oklch(38% 0.1452 292.67)",
+          "oklch(49% 0.1452 292.67)",
+          "oklch(61% 0.1452 292.67)",
+          "oklch(72% 0.1452 292.67)",
+          "oklch(84% 0.1452 292.67)",
+          "oklch(95% 0.1452 292.67)"
+        ]
+      },
+      "dark-primary-hover": {
+        "role": "neutral",
+        "displayName": "Dark primary hover",
+        "tonalRamp": [
+          "oklch(15% 0.0972 295.50)",
+          "oklch(26% 0.0972 295.50)",
+          "oklch(38% 0.0972 295.50)",
+          "oklch(49% 0.0972 295.50)",
+          "oklch(61% 0.0972 295.50)",
+          "oklch(72% 0.0972 295.50)",
+          "oklch(84% 0.0972 295.50)",
+          "oklch(95% 0.0972 295.50)"
+        ]
+      },
+      "dark-secondary": {
+        "role": "secondary",
+        "displayName": "Dark secondary",
+        "tonalRamp": [
+          "oklch(15% 0.0894 290.11)",
+          "oklch(26% 0.0894 290.11)",
+          "oklch(38% 0.0894 290.11)",
+          "oklch(49% 0.0894 290.11)",
+          "oklch(61% 0.0894 290.11)",
+          "oklch(72% 0.0894 290.11)",
+          "oklch(84% 0.0894 290.11)",
+          "oklch(95% 0.0894 290.11)"
+        ]
+      },
+      "dark-border": {
+        "role": "neutral",
+        "displayName": "Dark border",
+        "tonalRamp": [
+          "oklch(15% 0.1005 289.40)",
+          "oklch(26% 0.1005 289.40)",
+          "oklch(38% 0.1005 289.40)",
+          "oklch(49% 0.1005 289.40)",
+          "oklch(61% 0.1005 289.40)",
+          "oklch(72% 0.1005 289.40)",
+          "oklch(84% 0.1005 289.40)",
+          "oklch(95% 0.1005 289.40)"
+        ]
+      },
+      "inverse-body": {
+        "role": "neutral",
+        "displayName": "Inverse body",
+        "tonalRamp": [
+          "oklch(15% 0.0352 302.03)",
+          "oklch(26% 0.0352 302.03)",
+          "oklch(38% 0.0352 302.03)",
+          "oklch(49% 0.0352 302.03)",
+          "oklch(61% 0.0352 302.03)",
+          "oklch(72% 0.0352 302.03)",
+          "oklch(84% 0.0352 302.03)",
+          "oklch(95% 0.0352 302.03)"
+        ]
+      },
+      "error": {
+        "role": "neutral",
+        "displayName": "Error",
+        "tonalRamp": [
+          "oklch(15% 0.1502 15.60)",
+          "oklch(26% 0.1502 15.60)",
+          "oklch(38% 0.1502 15.60)",
+          "oklch(49% 0.1502 15.60)",
+          "oklch(61% 0.1502 15.60)",
+          "oklch(72% 0.1502 15.60)",
+          "oklch(84% 0.1502 15.60)",
+          "oklch(95% 0.1502 15.60)"
+        ]
+      },
+      "dark-error": {
+        "role": "neutral",
+        "displayName": "Dark error",
+        "tonalRamp": [
+          "oklch(15% 0.0870 9.26)",
+          "oklch(26% 0.0870 9.26)",
+          "oklch(38% 0.0870 9.26)",
+          "oklch(49% 0.0870 9.26)",
+          "oklch(61% 0.0870 9.26)",
+          "oklch(72% 0.0870 9.26)",
+          "oklch(84% 0.0870 9.26)",
+          "oklch(95% 0.0870 9.26)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Portada Manrope 800, hasta 80 px; frase destacada DM Serif Display cursiva."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Secciones Manrope 700, hasta 57.6 px; cierre de contacto con acento serif."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Contenido Manrope; Flor de Café en DM Serif Display redonda."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Lectura general."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Etiquetas de campos."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(.23,1,.32,1)",
+        "purpose": "Entradas y pulsación."
+      },
+      {
+        "name": "ease-drawer",
+        "value": "cubic-bezier(.32,.72,0,1)",
+        "purpose": "Menú móvil de 240ms."
+      },
+      {
+        "name": "hero-entry",
+        "value": "500ms",
+        "purpose": "Entrada de portada; omitir con movimiento reducido."
+      },
+      {
+        "name": "featured-entry",
+        "value": "400ms",
+        "purpose": "Aparición única al entrar en viewport."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "container",
+        "value": "1100px"
+      },
+      {
+        "name": "stack",
+        "value": "900px"
+      },
+      {
+        "name": "mobile",
+        "value": "767px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Button primary",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Acción de contacto.",
+      "html": "<button class=\"ds-button-primary\">Cotizar</button>",
+      "css": ".ds-button-primary{font-family:var(--font-body,Manrope,sans-serif);background:#6D4FC7;color:#fff;border:1px solid transparent;padding:12px 21px;min-height:52px;border-radius:8px;font-size:14px;font-weight:700;cursor:pointer;transition:background-color 160ms ease,transform 120ms cubic-bezier(.23,1,.32,1);} .ds-button-primary:hover{background:#5640A8;} .ds-button-primary:active{transform:scale(.97);} .ds-button-primary:focus-visible{outline:3px solid var(--primary-color,#6D4FC7);outline-offset:5px;}"
+    },
+    {
+      "name": "Button secondary",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Acción de contacto.",
+      "html": "<button class=\"ds-button-secondary\">Cotizar</button>",
+      "css": ".ds-button-secondary{font-family:var(--font-body,Manrope,sans-serif);background:var(--bg-main,#fff);color:var(--text-heading,#33255A);border:1px solid var(--border-color,#E6DFF7);padding:12px 21px;min-height:52px;border-radius:8px;font-size:14px;font-weight:700;cursor:pointer;transition:background-color 160ms ease,transform 120ms cubic-bezier(.23,1,.32,1);} .ds-button-secondary:hover{background:var(--secondary-color,#E7DEFB);} .ds-button-secondary:active{transform:scale(.97);} .ds-button-secondary:focus-visible{outline:3px solid var(--primary-color,#6D4FC7);outline-offset:5px;}"
+    },
+    {
+      "name": "Text field",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Campo con etiqueta visible.",
+      "html": "<label class=\"ds-label\" for=\"ds-name\">Nombre</label><input class=\"ds-input\" id=\"ds-name\" placeholder=\"Tu nombre completo\">",
+      "css": ".ds-label{font-family:var(--font-body,Manrope,sans-serif);display:block;font-size:12px;font-weight:600;margin-bottom:8px;} .ds-input{font-family:var(--font-body,Manrope,sans-serif);padding:12px;border:1px solid var(--border-color,#E6DFF7);border-radius:6px;background:var(--bg-main,#fff);color:var(--text-heading,#33255A);font-size:14px;} .ds-input:focus-visible{outline:3px solid var(--primary-color,#6D4FC7);outline-offset:5px;}"
+    },
+    {
+      "name": "Chip",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "Entrada por tipo de negocio.",
+      "html": "<button class=\"ds-chip\">Cafeterías</button>",
+      "css": ".ds-chip{font-family:var(--font-body,Manrope,sans-serif);background:var(--bg-main,#fff);color:var(--text-heading,#33255A);border:1px solid var(--border-color,#E6DFF7);border-radius:8px;padding:10px 16px;font-size:13px;min-height:44px;cursor:pointer;} .ds-chip:hover{background:var(--secondary-color,#E7DEFB);} .ds-chip:focus-visible{outline:3px solid var(--primary-color,#6D4FC7);outline-offset:5px;}"
+    },
+    {
+      "name": "Project panel",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Panel secundario de software.",
+      "html": "<article class=\"ds-card\"><h3>Experiencia en software</h3><p>Sistemas internos y aplicaciones.</p><a href=\"#contacto\">Consultar</a></article>",
+      "css": ".ds-card{font-family:var(--font-body,Manrope,sans-serif);padding:24px;background:var(--bg-light,#E8E1F1);border-radius:12px;color:var(--text-main,#4A4269);} .ds-card h3{color:var(--text-heading,#33255A);font-size:20px;letter-spacing:-.02em;} .ds-card a{color:var(--text-heading,#33255A);} .ds-card a:hover{text-decoration:underline;} .ds-card a:focus-visible{outline:3px solid var(--primary-color,#6D4FC7);outline-offset:5px;}"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "description": "Navegación de escritorio.",
+      "html": "<nav class=\"ds-nav\"><a href=\"#proyectos\" aria-current=\"page\">Trabajo</a><a href=\"#contacto\">Contacto</a></nav>",
+      "css": ".ds-nav{font-family:var(--font-body,Manrope,sans-serif);display:flex;gap:32px;} .ds-nav a{color:var(--text-heading,#33255A);font-size:14px;font-weight:600;padding:10px 0;text-decoration:none;} .ds-nav a[aria-current],.ds-nav a:hover{text-decoration:underline;color:var(--primary-color,#6D4FC7);} .ds-nav a:focus-visible{outline:3px solid var(--primary-color,#6D4FC7);outline-offset:5px;}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Estudio moderno",
+    "overview": "Estudio moderno, directo y cercano. Manrope y acentos editoriales en DM Serif Display, títulos alineados a izquierda, espacios amplios y superficies sólidas dan protagonismo al trabajo y al contacto. La captura de cada proyecto conserva su identidad propia dentro del marco de CabTec.",
+    "keyCharacteristics": [
+      "Jerarquía tipográfica clara y composición abierta.",
+      "Violeta, lavanda y superficies sólidas en ambos temas.",
+      "Movimiento breve, puntual y compatible con movimiento reducido."
+    ],
+    "rules": [],
+    "dos": [
+      "Do conservar la paleta aprobada y Manrope en la portada.",
+      "Do mantener foco visible, contenido sin JavaScript y ambos temas.",
+      "Do identificar Flor de Café como en desarrollo y sin publicar."
+    ],
+    "donts": [
+      "Don't añadir efectos infinitos, paralaje, símbolos flotantes, brillos ni degradados de texto.",
+      "Don't presentar el sistema de gimnasio como una web pública.",
+      "Don't inventar resultados, testimonios o estados de entrega."
+    ]
+  }
+}

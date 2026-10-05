@@ -2,8 +2,8 @@
 :root {
     /* Paleta de Colores (Lavanda & Violeta)
        Base: Lavanda #D2C3F4 · Violeta profundo #36255C */
-    --bg-main: #FFFFFF;
-    --bg-light: #F8F6FC;          /* Lavanda muy sutil para alternar secciones */
+    --bg-main: #F0EBF6;
+    --bg-light: #E8E1F1;          /* Lavanda muy sutil para alternar secciones */
     --bg-dark: #36255C;           /* Violeta profundo (Footer/Hero/CTA) */
     
     --text-heading: #33255A;      /* Títulos en violeta oscuro */

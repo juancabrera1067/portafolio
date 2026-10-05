@@ -1,88 +1,61 @@
-/* js/navigation.js */
 export function initNavigation() {
     const header = document.getElementById('header');
-    const mobileMenuBtn = document.querySelector('.mobile-menu-toggle');
-    const mainNav = document.getElementById('main-nav');
-    const navLinks = document.querySelectorAll('.nav-link');
-
-    // --- 1. Sticky Navbar: sombra al hacer scroll ---
-    const handleScroll = () => {
-        header.classList.toggle('scrolled', window.scrollY > 50);
+    const button = document.querySelector('.mobile-menu-toggle');
+    const nav = document.getElementById('main-nav');
+    if (!button || !nav) return;
+    document.documentElement.classList.add('js');
+    const mobile = window.matchMedia(document.querySelector('.hero-preview') ? '(max-width: 767px)' : '(max-width: 991px)');
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const main = document.querySelector('main');
+    const footer = document.querySelector('footer');
+    const floatButtons = document.querySelectorAll('.float-whatsapp, .back-to-top');
+    let opened = false;
+    const setOpen = (value, restore = true) => {
+        opened = value && mobile.matches;
+        nav.classList.toggle('active', opened);
+        nav.inert = mobile.matches && !opened;
+        button.setAttribute('aria-expanded', String(opened));
+        button.setAttribute('aria-label', opened ? 'Cerrar menú de navegación' : 'Abrir menú de navegación');
+        document.body.style.overflow = opened ? 'hidden' : '';
+        [main, footer, ...floatButtons].forEach(el => { if (el) el.inert = opened; });
+        if (opened) nav.querySelector('a')?.focus();
+        else if (restore) button.focus();
     };
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    // Ejecutar una vez al cargar por si el usuario recarga a mitad de la página
-    handleScroll();
-
-    // --- 2. Menú Móvil (Abrir/Cerrar) ---
-    const closeMenu = () => {
-        mainNav.classList.remove('active');
-        mobileMenuBtn.setAttribute('aria-expanded', 'false');
-        mobileMenuBtn.setAttribute('aria-label', 'Abrir menú de navegación');
-        document.body.style.overflow = '';
-    };
-
-    if (mobileMenuBtn && mainNav) {
-        mobileMenuBtn.addEventListener('click', () => {
-            const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
-
-            mainNav.classList.toggle('active', !isExpanded);
-            mobileMenuBtn.setAttribute('aria-expanded', String(!isExpanded));
-            mobileMenuBtn.setAttribute('aria-label', isExpanded ? 'Abrir menú de navegación' : 'Cerrar menú de navegación');
-            // Bloquear el scroll del body cuando el menú está abierto
-            document.body.style.overflow = isExpanded ? '' : 'hidden';
-        });
-
-        // Cerrar el menú con la tecla Escape (accesibilidad)
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && mainNav.classList.contains('active')) {
-                closeMenu();
-            }
-        });
-    }
-
-    // --- 3. Scroll Suave compensando la altura del header fijo ---
-    navLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            const href = link.getAttribute('href');
-            if (!href.startsWith('#')) return;
-
-            e.preventDefault();
-            const targetSection = document.getElementById(href.substring(1));
-            if (!targetSection) return;
-
-            if (mainNav && mainNav.classList.contains('active')) closeMenu();
-
-            window.scrollTo({
-                top: targetSection.offsetTop - header.offsetHeight,
-                behavior: 'smooth'
-            });
-        });
+    button.addEventListener('click', () => setOpen(!opened));
+    mobile.addEventListener('change', () => setOpen(false, false));
+    setOpen(false, false);
+    document.addEventListener('keydown', event => {
+        if (!opened) return;
+        if (event.key === 'Escape') { event.preventDefault(); setOpen(false); }
+        if (event.key === 'Tab') {
+            const focusables = [button, ...nav.querySelectorAll('a[href]')];
+            const index = focusables.indexOf(document.activeElement);
+            if (event.shiftKey && index <= 0) { event.preventDefault(); focusables.at(-1).focus(); }
+            else if (!event.shiftKey && index === focusables.length - 1) { event.preventDefault(); button.focus(); }
+        }
     });
-
-    // --- 4. Scrollspy: resaltar la sección visible en el menú ---
-    const sectionLinks = document.querySelectorAll('.nav-link:not(.btn)');
-    const sections = [...sectionLinks]
-        .map(link => document.getElementById(link.getAttribute('href').substring(1)))
-        .filter(Boolean);
-
-    const setActiveLink = (id) => {
-        sectionLinks.forEach(link => {
-            const isActive = link.getAttribute('href') === `#${id}`;
-            link.classList.toggle('active', isActive);
-            if (isActive) {
-                link.setAttribute('aria-current', 'page');
-            } else {
-                link.removeAttribute('aria-current');
-            }
-        });
-    };
-
-    // Detectar la sección que cruza el centro de la pantalla
-    const spyObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) setActiveLink(entry.target.id);
-        });
-    }, { rootMargin: '-40% 0px -55% 0px' });
-
-    sections.forEach(section => spyObserver.observe(section));
+    nav.querySelectorAll('a[href^="#"]').forEach(link => link.addEventListener('click', event => {
+        const target = document.getElementById(link.hash.slice(1));
+        if (!target) return;
+        event.preventDefault();
+        setOpen(false, false);
+        target.scrollIntoView({ behavior: reduced.matches ? 'instant' : 'smooth' });
+        history.replaceState(null, '', link.hash);
+        target.tabIndex = -1;
+        target.focus({ preventScroll: true });
+    }));
+    if ('IntersectionObserver' in window) {
+        const links = [...nav.querySelectorAll('a[href^="#"]')];
+        const spy = new IntersectionObserver(entries => {
+            const active = entries.find(entry => entry.isIntersecting);
+            if (!active) return;
+            links.forEach(link => {
+                const selected = link.hash === `#${active.target.id}`;
+                link.classList.toggle('active', selected);
+                if (selected) link.setAttribute('aria-current', 'location');
+                else link.removeAttribute('aria-current');
+            });
+        }, { rootMargin: '-20% 0px -60% 0px' });
+        links.forEach(link => { const section = document.querySelector(link.hash); if (section) spy.observe(section); });
+    }
 }

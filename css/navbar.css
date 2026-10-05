@@ -161,7 +161,9 @@
     .main-nav {
         position: fixed;
         top: 0;
-        right: -100%;
+        right: 0;
+        transform: translateX(100%);
+        visibility: hidden;
         width: 80%;
         max-width: 400px;
         height: 100vh;
@@ -170,13 +172,15 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        transition: right var(--transition-normal);
+        transition: transform var(--transition-normal), visibility var(--transition-normal);
         z-index: 1000;
     }
 
     /* Clase activa que agregará JS */
     .main-nav.active {
         right: 0;
+        transform: translateX(0);
+        visibility: visible;
     }
 
     .nav-list {
