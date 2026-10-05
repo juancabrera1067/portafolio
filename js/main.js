@@ -1,9 +1,9 @@
 /* js/main.js */
-import { initNavigation } from './navigation.js';
-import { initAnimations } from './animations.js';
-import { initProjects } from './projects.js';
-import { initContactForm } from './contact.js';
-import { initBackToTop, initFooterYear, initThemeToggle } from './utils.js';
+import { initNavigation } from './navigation.js?v=20261005-published';
+import { initAnimations } from './animations.js?v=20261005-published';
+import { initProjects } from './projects.js?v=20261005-published';
+import { initContactForm } from './contact.js?v=20261005-published';
+import { initBackToTop, initFooterYear, initThemeToggle } from './utils.js?v=20261005-published';
 
 document.addEventListener('DOMContentLoaded', () => {
     initNavigation();

@@ -93,6 +93,8 @@ export function initContactForm() {
 
         const formData = new FormData(form);
         formData.append('_subject', 'Solicitud de proyecto desde el portafolio');
+        // URL pública estable: evita enlaces a localhost en los correos de prueba.
+        formData.append('_url', 'https://juancabrera1067.github.io/portafolio/#contacto');
         formData.append('_template', 'table');
         formData.append('_captcha', 'false');
 
