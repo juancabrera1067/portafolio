@@ -34,7 +34,7 @@ Contactos conservados: WhatsApp `+52 687 139 3762`, `juandedioscabrerasanchez@gm
 
 Precios de referencia conservados en MXN: página de presentación $3,000–$5,000; sitio web de negocio $6,000–$10,000; tienda en línea $11,000–$18,000. El alcance final se acuerda en una cotización.
 
-El formulario de CabTec utiliza el endpoint AJAX existente de FormSubmit y respaldo mediante `mailto:`. **Prueba real del 5 de octubre de 2026:** FormSubmit respondió que necesita activación e indicó que envió un correo con el enlace “Activate Form”. Se realizó una segunda prueba; el propietario recibió un correo, pero el botón de activación mostró “no disponible”. La activación efectiva y la entrega de solicitudes siguen pendientes. El respaldo abre el cliente de correo con el texto preparado; el visitante debe enviarlo. Se realizó un envío de prueba identificado como técnico con datos ficticios. La respuesta de activación ya no borra los datos ni se presenta como entrega exitosa; ofrece respaldo por correo y WhatsApp.
+El formulario de CabTec utiliza el endpoint AJAX existente de FormSubmit y respaldo mediante `mailto:`. **Prueba real del 5 de octubre de 2026:** FormSubmit respondió que necesita activación e indicó que envió un correo con el enlace “Activate Form”. Un enlace de activación anterior mostró “Confirmation token not found”. Después se realizó una prueba desde el sitio público con el texto “PRUEBA CABTEC PUBLICADO 2026-10-05”: FormSubmit aceptó la solicitud y el propietario confirmó su recepción en la bandeja de entrada. **Envío y recepción comprobados.** El respaldo abre el cliente de correo con el texto preparado; el visitante debe enviarlo. Se realizó un envío de prueba identificado como técnico con datos ficticios. La respuesta de activación ya no borra los datos ni se presenta como entrega exitosa; ofrece respaldo por correo y WhatsApp.
 
 ## Publicación
 
@@ -50,9 +50,9 @@ GitHub Pages está configurado para publicar desde `main`, carpeta raíz, en htt
 - [x] JSON-LD válido y ubicación de LocalBusiness en Tijuana, Baja California.
 - [x] Favicons de 16, 32 y 180 px, página 404 y aviso de privacidad presentes; enlaces locales sin archivos faltantes.
 - [x] Envío real de prueba del formulario realizado; se detectó activación pendiente y se corrigió su tratamiento.
-- [ ] Resolver el enlace “Activate Form” que el propietario reporta como no disponible y confirmar recepción de una solicitud después de activar el servicio. Los correos de activación no acreditan entrega de solicitudes.
+- [x] FormSubmit acepta solicitudes desde la URL pública y el propietario confirmó recepción de la prueba en bandeja de entrada. No es necesario reutilizar el enlace de activación anterior.
 - [ ] Incorporar testimonios reales, con autorización para publicarlos. No se muestran testimonios mientras no exista esa evidencia.
 
 - [x] Rediseño publicado en GitHub Pages desde `main`; build y despliegue del rediseño finalizados correctamente.
 
-Los módulos JavaScript y hojas de estilo de la portada usan una versión en su URL para evitar mezclar archivos antiguos al publicar. El formulario identifica la URL pública con `_url`, evitando referencias a localhost en correos. No se considera finalizada la recepción del formulario solo por una respuesta HTTP exitosa.
+Los módulos JavaScript y hojas de estilo de la portada usan una versión en su URL para evitar mezclar archivos antiguos al publicar. El formulario identifica la URL pública con `_url`, evitando referencias a localhost en correos. La recepción está acreditada por la confirmación del propietario, además de la respuesta del servicio. Se probaron también las respuestas de activación pendiente, éxito y rechazo; únicamente el éxito limpia el formulario.
