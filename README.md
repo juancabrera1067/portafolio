@@ -34,8 +34,24 @@ Contactos conservados: WhatsApp `+52 687 139 3762`, `juandedioscabrerasanchez@gm
 
 Precios de referencia conservados en MXN: página de presentación $3,000–$5,000; sitio web de negocio $6,000–$10,000; tienda en línea $11,000–$18,000. El alcance final se acuerda en una cotización.
 
-El formulario de CabTec utiliza el endpoint AJAX existente de FormSubmit y respaldo mediante `mailto:`. **La recepción real de mensajes y la activación de FormSubmit no se verificaron** durante el rediseño. El respaldo abre el cliente de correo con el texto preparado; el visitante debe enviarlo. No se enviaron consultas de prueba a terceros.
+El formulario de CabTec utiliza el endpoint AJAX existente de FormSubmit y respaldo mediante `mailto:`. **Prueba real del 5 de octubre de 2026:** FormSubmit respondió que necesita activación e indicó que envió un correo con el enlace “Activate Form”. El propietario confirmó la activación y se realizó una segunda prueba desde el formulario. La confirmación en la bandeja de entrada sigue pendiente. El respaldo abre el cliente de correo con el texto preparado; el visitante debe enviarlo. Se realizó un envío de prueba identificado como técnico con datos ficticios. La respuesta de activación ya no borra los datos ni se presenta como entrega exitosa; ofrece respaldo por correo y WhatsApp.
 
 ## Publicación
 
-Este trabajo prepara una vista previa local. No se publicó el rediseño ni el proyecto Flor de Café. Los metadatos y archivos de hosting existentes se conservan.
+GitHub Pages está configurado para publicar desde `main`, carpeta raíz, en https://juancabrera1067.github.io/portafolio/. El proyecto Flor de Café continúa sin publicarse y no se modifica como parte de este repositorio.
+
+## Estado de pendientes — 5 de octubre de 2026
+
+- [x] Logo optimizado, fotografía real y capturas de proyectos disponibles.
+- [x] Correo, WhatsApp y enlace de LinkedIn configurados. La configuración del enlace no acredita acceso al perfil o propiedad de la cuenta.
+- [x] Canonical, Open Graph, robots y sitemap apuntan al sitio de GitHub Pages.
+- [x] Imagen social renovada a 1200 × 630, con oferta de páginas web en Tijuana y paleta actual. URL versionada para solicitar la imagen nueva al compartir.
+- [x] Fecha de modificación de la portada en sitemap actualizada; la fecha del aviso se conserva porque no cambió su contenido.
+- [x] JSON-LD válido y ubicación de LocalBusiness en Tijuana, Baja California.
+- [x] Favicons de 16, 32 y 180 px, página 404 y aviso de privacidad presentes; enlaces locales sin archivos faltantes.
+- [x] Envío real de prueba del formulario realizado; se detectó activación pendiente y se corrigió su tratamiento.
+- [x] Activación de FormSubmit confirmada por el propietario; segunda prueba enviada desde el formulario.
+- [ ] Confirmar recepción de la segunda prueba en bandeja de entrada o spam.
+- [ ] Incorporar testimonios reales, con autorización para publicarlos. No se muestran testimonios mientras no exista esa evidencia.
+
+La publicación se verifica contra el último build de GitHub Pages. No se considera finalizada la recepción del formulario solo por una respuesta HTTP exitosa.

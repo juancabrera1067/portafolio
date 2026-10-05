@@ -38,7 +38,7 @@ export function initContactForm() {
     };
 
     // Fallback: abre el correo del usuario con el mensaje prellenado (funciona en cualquier hosting)
-    const mailtoFallback = () => {
+    const mailtoFallback = (activationRequired = false) => {
         const name = document.getElementById('name').value.trim();
         const email = document.getElementById('email').value.trim();
         const projectType = document.getElementById('project-type').value;
@@ -51,7 +51,9 @@ export function initContactForm() {
         );
 
         window.location.href = `mailto:juandedioscabrerasanchez@gmail.com?subject=${subject}&body=${body}`;
-        showStatus('Abriendo tu correo con el mensaje listo para enviar.', 'success', true);
+        showStatus(activationRequired
+            ? 'El formulario todavía no está disponible. Abrimos tu correo con el mensaje preparado; debes enviarlo desde allí. También puedes contactarme por WhatsApp.'
+            : 'No pudimos enviar desde el formulario. Abrimos tu correo con el mensaje preparado; debes enviarlo desde allí. Tus datos siguen en el formulario.', 'error', true);
     };
 
     // Envío con fetch a FormSubmit (sin backend propio); si falla, usa el respaldo por correo
@@ -98,11 +100,16 @@ export function initContactForm() {
             .then(async (res) => {
                 let data;
                 try { data = await res.json(); } catch { data = {}; }
-                if (res.ok && data.success) return data;
+                if (res.ok && /needs?\s+activation/i.test(data.message || '')) return { activationRequired: true };
+                if (res.ok && (data.success === true || data.success === 'true')) return data;
                 throw new Error(data.message || 'Error en el servidor');
             })
             .then((data) => {
-                showStatus(data.message || '¡Mensaje enviado con éxito! Te responderé en menos de 24 horas.', 'success');
+                if (data.activationRequired) {
+                    mailtoFallback(true);
+                    return;
+                }
+                showStatus('Tu solicitud fue aceptada para envío. Gracias por escribir; me pondré en contacto contigo.', 'success');
                 form.reset();
             })
             .catch(() => {
